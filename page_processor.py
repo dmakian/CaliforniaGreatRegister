@@ -1,6 +1,7 @@
 import sys, os, codecs, re
 import logging
 from collections import defaultdict
+from pprint import pprint
 
 OUTDIR = '/Users/rweiss/Documents/Stanford/ancestry/cleaned'
 
@@ -14,6 +15,12 @@ class Page(object):
 		self._text = None
 		self._numlines = 0
 		self._rawtext = rawtext
+		try:
+			self.parse_file()	
+		except ValueError as e:
+			self.logger.error(e)
+		except IndexError as e:
+			self.logger.error(e)
 
 	def __str__(self):
 		return self._rawtext
@@ -52,25 +59,12 @@ class Page(object):
 		except:
 			raise ValueError('Failed to get page roll number')
 
-	def set_date(self, date):
-		try:
-			self._date = date
-		except:
-			raise ValueError('Failed to get date')
-
 	def has_valid_data(self):
-		if self.id and self.rollnum and self.text and self.date:
+		if self.id and self.rollnum and self.text:
 			return True
 		else:
 			return False
 	
- 	# Override for county-specific date strings
-	#def _get_date(self, text):
-	#	return None
-
-	#def parse_file(self):
-	#	return None
-
 class PageProcessor(object):
 
 	def __init__(self, county=None, logger=None):
@@ -86,7 +80,7 @@ class PageProcessor(object):
 		self._totalpages = 0
 		self._pagepath = os.path.join(OUTDIR, county + '.txt')		
 		self._validdata = []
-		self.logger.info('creating page processor for {county} county'.format(
+		self.logger.info('creating page processor for {county}'.format(
 			county=county))
 
 	@property
@@ -120,9 +114,10 @@ class PageProcessor(object):
 		with codecs.open('{county}_successes.txt'.format(
 			county=self.county), 'a', 'utf8') as outfile:
 				for page in self._validdata:
-					for line in page['data']:
-						outfile.write("{id},{rollnum},{date},{data}\n".format(
-							id=page['id'], rollnum=page['rollnum'], date=page['date'], data=line))
+					for line in page['data']:						
+							outfile.write("{id},{rollnum},{data}\n".format(
+							id=page['id'], rollnum=page['rollnum'], data=line))
+							self.logger.debug('line length is {x} n-grams'.format(x=len(line.split(' '))))
 
 		self.logger.info('writing {county} failures to file'.format(county=self.county))
 		if self._num_failed > 0:
@@ -150,6 +145,7 @@ class AlamedaPageProcessor(PageProcessor):
 				self._validdata.append(self.get_data(page))
 			else:				
 				self.increment_fail(page)
+			#break
 
 		self._avglines = sum(k*v for k,v in self._numlines.items()) / float(self._totalpages - self._num_failed)
 		self.logger.info('alameda parse complete, {x} page(s) failed, average of {y} rows extracted, max of {z} lines seen'.format(
@@ -157,51 +153,117 @@ class AlamedaPageProcessor(PageProcessor):
 		self.create_files()
 
 	def get_data(self, page):
-		data = split(page.text, ['Dem', 'Rep', 'Declines']) # XXX county-specific separate task
-		self.logger.info('{num} lines found on page {id} and roll {rollnum}'.format(
+		data = page.text
+		seps = [r'Dem', r'Rep', r'Declines'] # XXX county-specific separate task
+		for sep in seps:
+			data = re.sub(sep, ','+sep+'\n', data)		
+		data = data.split('\n')
+		self.logger.debug('{num} lines found on page {id} and roll {rollnum}'.format(
 			num=len(data), id=page.id, rollnum=page.rollnum))
 		self._numlines[len(data)] += 1
  		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'data':data}
 
 class AlamedaPage(Page):
 
-	def __init__(self, rawtext, logger=None):
-		Page.__init__(self, rawtext)		
-		self._datepattern = r'(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|(Nov|Dec)(?:ember)?)(\d{0,2}|\w)(\d{0,4})'
-		try:
-			self.parse_file()	
-		except:
-			self.logger.error('Failed to parse page data')
+	def parse_file(self):
+		lines = self.rawtext.split(u'|')
+		self._id = lines[1]
+		self._rollnum = lines[3].split(' ')[1]
+		self._text = ''.join(lines[4:])	
+
+class SanFranciscoPageProcessor(PageProcessor):
+
+	def __init__(self, county='sanfrancisco', logger=None):		
+		PageProcessor.__init__(self, county=county)				
+
+	# XXX Move this to base class
+	def start(self):
+		for line in self._countyfile:
+			page = SanFranciscoPage(line) # XXX detect what page type to use given county type
+			if page.has_valid_data():
+				self._validdata.append(self.get_data(page))
+			else:				
+				self.increment_fail(page)
+			#break
+
+		self._avglines = sum(k*v for k,v in self._numlines.items()) / float(self._totalpages - self._num_failed)
+		self.logger.info('san francisco parse complete, {x} page(s) failed, average of {y} rows extracted, max of {z} lines seen'.format(
+			x=self._num_failed, y=self._avglines, z=max(self._numlines.keys())))
+		self.create_files()
+
+	def get_data(self, page):
+		data = page.text
+		seps = [r'Dem', r'Rep', r'Declines'] # XXX county-specific separate task
+		for sep in seps:
+			data = re.sub(sep, ','+sep+'\n', data)		
+		data = data.split('\n')
+		self.logger.debug('{num} lines found on page {id} and roll {rollnum}'.format(
+			num=len(data), id=page.id, rollnum=page.rollnum))
+		self._numlines[len(data)] += 1
+ 		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'data':data}
+
+class SanFranciscoPage(Page):
 
 	def parse_file(self):
 		lines = self.rawtext.split(u'|')
 		self._id = lines[1]
 		self._rollnum = lines[3].split(' ')[1]
 		self._text = ''.join(lines[4:])	
-		self.set_date(self._get_date(self.text))
 
-	# Alameda-specific date.
-	def _get_date(self, text):
-		s =  ''.join(text.split())# remove all whitespace, county specific
-		match = re.search(self._datepattern, s)
-		if match:
-			return match.group(0)
-		else:
-			return None
+class SanBernardinoPageProcessor(PageProcessor):
+
+	def __init__(self, county='sanbernardino', logger=None):		
+		PageProcessor.__init__(self, county=county)				
+
+	# XXX Move this to base class
+	def start(self):
+		for line in self._countyfile:
+			page = SanFranciscoPage(line) # XXX detect what page type to use given county type
+			if page.has_valid_data():
+				self._validdata.append(self.get_data(page))
+			else:				
+				self.increment_fail(page)
+			#break
+
+		self._avglines = sum(k*v for k,v in self._numlines.items()) / float(self._totalpages - self._num_failed)
+		self.logger.info('san bernardino parse complete, {x} page(s) failed, average of {y} rows extracted, max of {z} lines seen'.format(
+			x=self._num_failed, y=self._avglines, z=max(self._numlines.keys())))
+		self.create_files()
+
+	def get_data(self, page):
+		data = page.text
+		seps = [r'Democrat', r'Republican', r'Declines to State'] # XXX county-specific separate task
+		for sep in seps:
+			data = re.sub(sep, ','+sep+'\n', data)		
+		data = data.split('\n')
+		self.logger.debug('{num} lines found on page {id} and roll {rollnum}'.format(
+			num=len(data), id=page.id, rollnum=page.rollnum))
+		self._numlines[len(data)] += 1
+ 		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'data':data}
+
+class SanBernardinoPage(Page):
+
+	def parse_file(self):
+		lines = self.rawtext.split(u'|')
+		self._id = lines[1]
+		self._rollnum = lines[3].split(' ')[1]
+		self._text = ''.join(lines[4:])	
+
 
 def run():
 	logger = logging.getLogger(__name__)
 	logger.info("starting processing job")
+
 	alameda_processor = AlamedaPageProcessor()
 	alameda_processor.load_data()
 	alameda_processor.start()
 
-#http://stackoverflow.com/questions/4697006/python-split-string-by-list-of-separators
-def split(txt, seps):
-    default_sep = seps[0]
+	sanfrancisco_processor = SanFranciscoPageProcessor()
+	sanfrancisco_processor.load_data()
+	sanfrancisco_processor.start()
 
-    # we skip seps[0] because that's the default seperator
-    for sep in seps[1:]:
-        txt = txt.replace(sep, default_sep)
-    return [i.strip() for i in txt.split(default_sep)]
+	sanbernardino_processor = SanBernardinoPageProcessor()
+	sanbernardino_processor.load_data()
+	sanbernardino_processor.start()
+
 
