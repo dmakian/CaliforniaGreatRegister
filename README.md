@@ -47,15 +47,15 @@ Given an object that represents a list of row strings, insert corrective delimit
 # Files description
 
 - **main.py** - runs the main task that calls subsetter and extractor in sequence.  
-subsetter.py - contains code that creates the new county-level files.  This file only needs to be called once, and so currently this method is commented out in main.py (should auto-detect that it doesn’t need to be run again)
+- subsetter.py - contains code that creates the new county-level files.  This file only needs to be called once, and so currently this method is commented out in main.py (should auto-detect that it doesn’t need to be run again)
 - **extractor.py** - contains code that extracts row and column structure from the county-level string that represents pages of scanned voter data
 
 # Class and method description
 
 - **Page** - Every line in a county file is converted to a Page object.  A Page object has attributes that describe values or quantities about the Page and where it comes from (e.g. which roll number and id, what’s the number of lines extracted).
 - **ExtractionTask** - Extracting the data as rows and columns is described as an ExtractionTask.  The parent class abstracts most of the generic behaviors and attributes of an ExtractionTask (e.g. success and failure rates, task attributes such as the county, statistics such as number of pages found, average number of rows and columns extracted) There are a number of objects that inherit from ExtractionTask, each one representing a specific county.  This is because heuristics have to be created bespoke for each county.  Bespoke county-level heuristics are created by member methods in each county’s ExtractionTask class.
-- **get_rows()** - Contains the heuristics needed to pull out rows from each page.  This method is defined by each county ExtractTask class.
-- **get_columns()** - Contains the heuristics needed to pull out columns from each row.  This method is defined by each county ExtractTask class.
+- **get_rows()** - Contains the heuristics needed to pull out rows from each page.  This method is defined by each county ExtractionTask class.
+- **get_columns()** - Contains the heuristics needed to pull out columns from each row.  This method is defined by each county ExtractionTask class.
 
 
 
