@@ -7,7 +7,7 @@ from progressbar import ProgressBar
 Job constants; change OUTDIR to appropriate
 '''
 TOTALPAGES = 595890 # Hardcoded total page count, known a priori
-OUTDIR = '/Users/rweiss/Documents/Stanford/ancestry/cleaned'
+OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned'
 
 '''
 Builds a county dict file that maps county regex to a county-specific file
@@ -92,7 +92,7 @@ def get_countypage_counts(infile, counties):
 Writes county page counts to a meta file
 '''
 def write_meta_file(pagecounts):
-	with open('subset_meta.txt', 'w') as outfile:
+	with open('subsetter_summary.txt', 'w') as outfile:
 		for key, value in pagecounts.iteritems():
 			outfile.write("{txtfile},{rawcount},{prop}\n".format(txtfile=key, rawcount=value, prop=float(value)/TOTALPAGES))
 
@@ -111,9 +111,4 @@ def run(rawfile):
 
 	with codecs.open(rawfile, 'r', 'utf16') as infile: #gag
 		county_page_counts = get_countypage_counts(infile, counties)
-		write_meta_file(county_page_counts)
-
-if __name__ == '__main__':
-	print "Starting."
-	run('46348_CAVoter.txt')
-	print "Done."
+		write_summary_file(county_page_counts)
