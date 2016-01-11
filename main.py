@@ -1,7 +1,6 @@
 import logging, os
 from logging import config
-import page_processor
-from page_processor import Page, AlamedaPageProcessor
+import extractor, subsetter
 import yaml
 
 def setup_logging(
@@ -24,8 +23,11 @@ def setup_logging(
         logging.basicConfig(level=default_level)
 
 if __name__ == '__main__':
-	setup_logging()
-	logger = logging.getLogger(__name__)
-	logger.info('starting main task')
-	page_processor.run()
-	logger.info('ended main task')
+    setup_logging()
+    logger = logging.getLogger(__name__)
+    #logger.info('starting subsetter task')
+    #subsetter.run('46348_CAVoter.txt')
+    #logger.info('ended subsetter task')
+    logger.info('starting extractor task')
+    extractor.run()
+    logger.info('ended extractor task')
