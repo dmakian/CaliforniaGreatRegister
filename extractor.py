@@ -1,9 +1,8 @@
-import sys, os, codecs, re
-import logging
+import sys, os, codecs, re, logging
 from collections import defaultdict
 from pprint import pprint
 
-OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned'
+OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned' # XXX Move this to logging.yaml
 
 class Page(object):
 
@@ -51,6 +50,9 @@ class Page(object):
 		else:
 			return False
 
+	'''
+	Reads the header for each page and sets page attributes accordingly.
+	'''
 	def parse_file(self): # XXX Fix this so that it's just going from the file id rather than header
 		lines = self.rawtext.split(u'|')
 		self._id = lines[1]
@@ -87,6 +89,10 @@ class ExtractionTask(object):
 	def num_failed(self):
 	    return self._num_failed
 
+	'''
+	Opens the appropriate county file, stores the lines in the instantiated ExtractionTask object,
+	and counts the number of lines found in the file.
+	'''
 	def load_data(self):
 		with codecs.open(self._pagepath, 'r', 'utf8') as infile:
 			self._countyfile = infile.readlines()
@@ -95,15 +101,24 @@ class ExtractionTask(object):
 		self.logger.info('loaded {num} pages for {county}'.format(
 			county=self._county, num=self._totalpages))
 
+	'''
+	Increments the fail-to-create-page counter.
+	'''
 	def increment_fail(self, page):
 		self.logger.debug('Page {pageid} in roll {rollnum} failed'.format(pageid=page.id, rollnum=page.rollnum))
 		self._num_failed += 1
 		self._failures.append(page)
 
+	'''
+	Creates _successes.txt and _failures.txt files for each county.  Also updates the extractor 
+	summary with relevant statistics about row-wise and column-wise extraction for the county, 
+	as well as values that summarize the number of pages that had any amount of successful
+	row- or column-wise extraction.
+	'''
 	def create_files(self):
 		self.logger.info('writing {county} successes to file'.format(
 			county=self.county))
-		with codecs.open('{county}_successes.txt'.format(
+		with codecs.open('{county}_successes.txt'.format( # XXX Writing is slow and sloppy
 			county=self.county), 'a', 'utf8') as outfile:
 				for page in self._validdata:
 					for row in page['rows']:						
@@ -124,11 +139,17 @@ class ExtractionTask(object):
 			outfile.write('{county},{rate}\n'.format(
 				county=self.county,rate=float(self._num_failed)/self._totalpages))
 
+	'''
+	Kicks off the extraction task.  Tries to convert each line to a Page object.  If successful,
+	tries to extract the rows from the page.  Then for each successful row found, tries to extract
+	columns from each row found.
+	'''
 	def start(self):
 		for line in self._countyfile:
 			page = Page(line)
 			if page.has_valid_data():
 				self._validdata.append(self.get_rows(page))
+				#self._validdata.append(self.get_columns(self.get_rows(page)))
 			else:				
 				self.increment_fail(page)
 
@@ -142,9 +163,9 @@ class AlamedaExtractionTask(ExtractionTask):
 	def __init__(self, county='alameda', logger=None):		
 		ExtractionTask.__init__(self, county=county)				
 
-	def get_rows(self, page): # XXX Extracts rows from a page
+	def get_rows(self, page): # Extracts rows from a page
 		rows = page.text
-		seps = [r'Dem', r'Rep', r'Declines'] # XXX county-specific separate task
+		seps = [r'Dem', r'Rep', r'Declines']
 		for sep in seps:
 			rows = re.sub(sep, ','+sep.strip()+'\n', rows)		
 		rows = rows.split('\n')
@@ -153,7 +174,8 @@ class AlamedaExtractionTask(ExtractionTask):
 		self._numlines[len(rows)] += 1
  		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'rows':rows}
 
-# 	def get_columns(self, rows): # XXX Extract columns from rows
+# 	def get_columns(self, rows): # Extract columns from rows
+	# XXX TBD
 
 class SanFranciscoExtractionTask(ExtractionTask):
 
@@ -162,28 +184,22 @@ class SanFranciscoExtractionTask(ExtractionTask):
 
 	def get_rows(self, page):
 		rows = page.text
-		seps = [r'Dem', r'Rep', r'Declines'] # XXX county-specific separate task
+		seps = [r'Dem', r'Rep', r'Declines']
 		for sep in seps:
 			rows = re.sub(sep, ','+sep.strip()+'\n', rows)		
 		
 			for row in rows.split('\n'):
 				if len(row.split(' ')) > 10:			
-					seps = [r'Deo', r'Den', r'Dea'] # XXX county-specific separate task
+					seps = [r'Deo', r'Den', r'Dea']
 					for sep in seps:
 						row = re.sub(sep, ','+sep.strip()+'\n', row)			
-				#pprint(row)	
-		
-		print type(rows)			
-		pprint(rows)	
-		sys.exit()
-
 
 		self.logger.debug('{num} lines found on page {id} and roll {rollnum}'.format(
 			num=len(rows), id=page.id, rollnum=page.rollnum))
 		self._numlines[len(rows)] += 1
  		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'rows':rows}
 
-# 	def parse_data(self, rows):
+# 	def get_columns(self, rows):
 
 class SanBernardinoExtractionTask(ExtractionTask):
 
@@ -192,7 +208,7 @@ class SanBernardinoExtractionTask(ExtractionTask):
 
 	def get_rows(self, page):
 		data = page.text
-		seps = [r'Democrat', r'Republican', r'Declines to State'] # XXX county-specific separate task
+		seps = [r'Democrat', r'Republican', r'Declines to State']
 		for sep in seps:
 			rows = re.sub(sep, ','+sep.strip()+'\n', rows)		
 		rows = rows.split('\n')
@@ -201,20 +217,20 @@ class SanBernardinoExtractionTask(ExtractionTask):
 		self._numlines[len(rows)] += 1
  		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'rows':rows}
 
-#	def parse_data(self, rows):
+#	def get_columns(self, rows):
 
 
 def run():
 	logger = logging.getLogger(__name__)
 	logger.info("starting processing job")
 
-#	alameda_task = AlamedaExtractionTask()
-#	alameda_task.load_data()
-#	alameda_task.start()
+	alameda_task = AlamedaExtractionTask()
+	alameda_task.load_data()
+	alameda_task.start()
 
-	sanfrancisco_task = SanFranciscoExtractionTask()
-	sanfrancisco_task.load_data()
-	sanfrancisco_task.start()
+#	sanfrancisco_task = SanFranciscoExtractionTask()
+#	sanfrancisco_task.load_data()
+#	sanfrancisco_task.start()
 
 #	sanbernardino_task = SanBernardinoExtractionTask()
 #	sanbernardino_task.load_data()
