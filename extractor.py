@@ -2,8 +2,8 @@ import sys, os, codecs, re, logging
 from collections import defaultdict
 from pprint import pprint
 
-#OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned' # XXX Move this to logging.yaml
-OUTDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
+OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned' # XXX Move this to logging.yaml
+#OUTDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
 
 class Page(object):
 
@@ -56,9 +56,9 @@ class Page(object):
 	'''
 	def parse_file(self):
 		lines = self.rawtext.split(u'|')
-		match = re.match(r'(\w+(county))_(\d+)-(\d+)',lines[1])
-		self._id = match.group(2)
-		self._rollnum = match.group(3)
+		match = re.match(r'(\w+county)_(\d+)-(\d+)',lines[0])
+		self._id = match.group(3)
+		self._rollnum = match.group(2)
 		self._text = ''.join(lines[4:])	
 
 class ExtractionTask(object):
@@ -120,6 +120,12 @@ class ExtractionTask(object):
 	def create_files(self):
 		self.logger.info('writing {county} successes to file'.format(
 			county=self.county))
+
+		if not os.path.isfile('{county}_successes.txt'.format(county=self.county)):
+			with codecs.open('{county}_successes.txt'.format( # XXX Writing is slow and sloppy
+				county=self.county), 'w', 'utf8') as outfile:
+				outfile.write('pagenum,rollnum,name,address,occupation,pid\n')
+		
 		with codecs.open('{county}_successes.txt'.format( # XXX Writing is slow and sloppy
 			county=self.county), 'a', 'utf8') as outfile:
 				for page in self._validdata:
@@ -159,7 +165,6 @@ class ExtractionTask(object):
 				self._validdata.append(parsed_page)
 			else:				
 				self.increment_fail(page)
-#			break
 
 		self._avglines = sum(k*v for k,v in self._numlines.items()) / float(self._totalpages - self._num_failed)
 		self.logger.info('{county} parse complete, {x} page(s) failed to parse, average of {y} rows found, max of {z} rows'.format(
@@ -169,7 +174,9 @@ class ExtractionTask(object):
 class AlamedaExtractionTask(ExtractionTask):
 
 	def __init__(self, county='alameda', logger=None):		
-		ExtractionTask.__init__(self, county=county)				
+		ExtractionTask.__init__(self, county=county)
+		self.address_re = re.compile('((\d+\w?)\s(\w+\s)?(\w+(-\w+)?)\s(st|at|ave|blvd|boulevard|road|place|terrace|way)?)', re.IGNORECASE)
+		self.precinct_re = re.compile('(\w+)((?:\w+|\s+|\d+)P\s*R\s*E\s*C\s*I\s*N\s*C\s*T\s*)(?:-)?(\w+(?:\s+))?', re.IGNORECASE)
 
 	#def get_addresspids_per_page(self, page):
 		'''
@@ -187,12 +194,23 @@ class AlamedaExtractionTask(ExtractionTask):
 			rows = re.sub(sep, ','+sep.strip()+'\n', rows)		
 		rows = rows.split('\n')
 
-		for row in rows: # Second row extraction
-			if row.endswith('\r'):
+		for row in rows: # Second pass through rows: skip rows that fail a detection task
+			if row.endswith('\r'): # get rid of rows that only have end of page characters
 				continue
-			if len(row) < 1:
+			if len(row) < 1: # skip the row if it's empty
 		 		continue
+		 	addresses = re.findall(self.address_re, row) # throw away rows with two addresses
+		 	if len(addresses) > 1:
+		 		self.logger.debug('too many addresses') # throw away 1MM rows
+		 		continue
+		 	header = re.findall(self.precinct_re, row)
+		 	if len(header): # throw away rows with header information
+		 		self.logger.debug('skipped header') # throw away 264 rows
+		 		continue		 		
 		 	result.append(row)
+
+		#for row in result:
+
 
 		self.logger.debug('{num} lines found on page {id} and roll {rollnum}'.format(
 			num=len(rows), id=page.id, rollnum=page.rollnum))
@@ -200,15 +218,20 @@ class AlamedaExtractionTask(ExtractionTask):
  		return {'id':page.id, 'rollnum':page.rollnum, 'date':page.date, 'rows':result}
 
  	def get_columns(self, rows): # Extract columns from rows
+ 		
  		result = []
  		if len(rows) > 0: 			
 		 	for row in rows:		 		
-		 		row = str(row.strip())			
-		 		row = re.sub(r'^(\d+)\s+', '', row) 				
-		 		row = re.findall(r'^(.+?)(\d.+)', row)
+		 		row = str(row.strip()) # strip whitespace
+		 		row = re.sub(r'^(\d+)\s+', '', row) # remove leading digits (row numbers)		
+		 		row = re.findall(r'^(.+?)(\d.+)', row) # split as soon as address digits seen
 				if len(row) < 1:
-		 			continue		
-		 		result.append(','.join(row[0]))
+		 			continue			 		
+		 		row = ','.join(row[0])
+		 		addresses = re.findall(self.address_re, row)
+		 		if len(addresses) > 0:
+		 			row = re.sub(addresses[0][0], addresses[0][0].strip() + ',', row)
+		 		result.append(row)
  		return result
 
 	# XXX TBD
