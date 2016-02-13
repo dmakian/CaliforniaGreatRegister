@@ -8,9 +8,6 @@ def setup_logging(
     default_level=logging.INFO,
     env_key='LOG_CFG'
 ):
-    """Setup logging configuration
-
-    """
     path = default_path
     value = os.getenv(env_key, None)
     if value:
@@ -28,6 +25,11 @@ if __name__ == '__main__':
     #logger.info('starting subsetter task')
     #subsetter.run('46348_CAVoter.txt')
     #logger.info('ended subsetter task')
+    counties = [
+        'alameda',
+        'sanbernardino'
+    ]
+
     logger.info('starting extractor task')
-    extractor.run()
+    extractor.run(counties)
     logger.info('ended extractor task')
