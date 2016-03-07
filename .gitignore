@@ -1,0 +1,8 @@
+cleaned/*
+*.dat
+.ipynb_checkpoints/*
+*.log
+env/*
+*.pyc
+*.tar.gz
+scratch/*
