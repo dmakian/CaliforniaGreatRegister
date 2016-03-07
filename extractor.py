@@ -4,12 +4,6 @@ from pprint import pprint
 import rules
 import rules
 
-# XXX Get a csv with just names, string, and partyid to brad
-# XXX Count number of characters in a page, number of characters detected per row, sum number of row, lengths over total characters for estimate of page completion
-# Best guess of bad lines = if character count > 60 chars
-# Add row-level failures to the summary file
-# Add another column to roll_stats that consists of successful pages
-
 # XXX Move this to a config file or something similar.
 INDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
 OUTDIR = '/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data'
@@ -20,15 +14,15 @@ class Page(dict):
 		self.logger = logger or logging.getLogger(__name__)
 		self._id = None
 		self._rollnum = None
-		self._precinct = None
-		self._precinctno = None
+		self.precinct = None
+		self.precinctno = None
 		self._text = None
 		self._numlines = 0
 		self._rawtext = rawtext # XXX Consider collapsing into "text"
 		self._numrows = 0
 		self._errors = defaultdict(int)
 
-		try: # XXX Fix this
+		try:
 			self._parsed = self.parse_file()	
 		except ValueError as e:
 			self.logger.debug(e)
@@ -45,10 +39,6 @@ class Page(dict):
 	@property
 	def rollnum(self):
 	    return self._rollnum
-
-	@property
-	def precinct(self):
-	    return self._precinct
 	
 	@property
 	def rawtext(self):
@@ -76,10 +66,8 @@ class Page(dict):
 			self._id = match.group(3)
 			self._rollnum = match.group(2)
 			self._text = ''.join(lines[4:])
-
-			if self._rollnum < 14 and county == 'sanbernardino':
+			if int(self._rollnum) > 14 and county == 'sanbernardino':
 				return False
-
 			return True
 		else:
 			return False
@@ -126,10 +114,10 @@ class ExtractionTask(object):
 		filepath = os.path.join(OUTDIR, '{county}_successes.txt'.format(
 			county=self.county))
 		with codecs.open(filepath, 'a', 'utf8') as outfile:
-				for page in self._extracted_pages:
-					for row in page['rows']:
-						outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
-						#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
+			for page in self._extracted_pages:
+				for row in page['rows']:
+					outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
+					#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
 	
 	'''Opens stats file and writes results for each county's extraction performance'''
 	def write_stats(self):
@@ -164,7 +152,6 @@ class ExtractionTask(object):
 	def collect_county_stats(self):
 		self.collect_roll_stats()
 		if self._failed_pages:
-			#num_failed_pages = len([page for page in self._failed_pages if len(page) > 325])
 			num_failed_pages = len([page for page in self._failed_pages])
 		else:
 			num_failed_pages = 0
@@ -198,7 +185,7 @@ class ExtractionTask(object):
 
 		first_entry = os.path.exists(filepath)
 		with codecs.open(filepath, 'a', 'utf8') as outfile:
-			if first_entry:
+			if not first_entry:
 				outfile.write('county,rollnum,totalpages,failedpages\n')
 			for k, v in counts.items():
 				if 'failed' not in v.keys():
@@ -225,8 +212,8 @@ class ExtractionTask(object):
 
 	 	for row in page['rows']:
 	 		result = rules.extract_address(row, self, page)
-			#result = rules.extract_name(result, self, page)
-			#result = rules.postprocess_columns(result, page, self)
+			result = rules.extract_name(result, self, page)
+			result = rules.postprocess_columns(result, page, self)
 			results.append(result)
 		
 		if len(results) > 1:
