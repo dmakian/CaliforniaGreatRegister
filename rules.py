@@ -1,11 +1,12 @@
 import re, logging, pprint
+from pprint import pprint
 
 logger = logging.getLogger(__name__)
 
+# XXX Move these into json and load from there
 REGEXES = {
 	'alameda': {
-		'delims': [r'D?\s*e\s*m(?:o?c?r?a?t?)?', r'R?\s*e\s*p(?:\s*ubl?\s*i?[c|o]?\s*a?\s*n?)?', r'Dec(?:line(?:s)?)? [T|t]o [S|s]tate', 'Socialist', 'Progressive'],
-		#'name_re': re.compile('([A-Z][a-z]*)((?:\s+M[rs|iss]\s+)?(?:[A-Z][a-z]+)(?:\s+[A-Z]\s+)+)'),#\s+((?:Mr?s?)?(?:\w+))'),#, re.IGNORECASE),
+		'delims': ['Dem', 'Rep', 'Declines', 'Socialist', 'Progressive'],
 		'name_re': re.compile('([A-Z][a-z]+\s)((?:[M?\s*i\s*s\s*s|M?\s*r\s*s]\s)*(?:(?:[A-Z][a-z]*\s){1}(?:[A-Z][a-z]*?\s){1}))'),
 		'street_re': re.compile(r'(l[a|i]ne|circle|court|ct|resv|st|at|ave|camp|drive|dr|blvd|boulevard|road|rd|place|terrace|way|highway)', re.IGNORECASE),
 		'city_address_re': re.compile('((?:(?:\d+)(?:.+)|[A-Z][a-z]+\s)(?:l[a|i]ne|circle|court|ct|resv|st|at|ave|camp|drive|dr|blvd|boulevard|road|rd|place|terrace|way|highway)(?:(?:.+)(?:box\s\d+))?)', re.IGNORECASE),
@@ -14,11 +15,11 @@ REGEXES = {
 		'precinct2_re': re.compile('(?:REGISTRATION)\s+(?:P\s*R\s*E\s*C\s*I\s*N\s*C\s*T*\s*)*([A-Z]+\s)+(?:[N|n][oO|]\s)(\d+)')
 	},
 	'sanbernardino': {
-		'delims': [r'D?\s*e\s*m(?:o?c?r?a?t?)?', r'R?\s*e\s*p(?:\s*ubl?\s*i?[c|o]?\s*a?\s*n?)?', r'Dec(?:line(?:s)?)? [T|t]o [S|s]tate', 'Socialist', 'Progressive'],
+		'delims': ['Dem', 'Rep', 'Declines', 'Socialist', 'Progressive'],
 		'name_re': re.compile('([A-Z][a-z]+\s)((?:[M\s*i\s*s\s*s|M\s*r\s*s]\s)*(?:(?:[A-Z][a-z]*\s){1}(?:[A-Z][a-z]*?\s){1}))'),
-		'street_re': re.compile(r'(line|livery|drive|court|ct|resv|street|st|at|avenue|ve|camp|dr|blvd|boulevard|road|rd|place|terrace|way|highway)', re.IGNORECASE),
+		'street_re': re.compile(r'(line|livery|dr(ive)?|c(?:our)?t|resv|st(?:reet)?|at|a?\s*ve(?:nue)?|camp|dr|blvd|boulevard|r?oad|rd|place|terrace|way|highway\s*)', re.IGNORECASE),
 		#'city_address_re': re.compile(r'((?:\d+\s)|\s(?:W|E|N|S)\s(?:\w+\s)*(?:court|ct|street|st|at|avenue|ave|camp|blvd|boulevard|road|rd|place|pl|terrace|highway|way)\s,)', re.IGNORECASE),
-		'city_address_re': re.compile('((?:(?:\d+)(?:.+)|[A-Z][a-z]+\s)(?:l[a|i]ne|circle|court|ct|resv|rfd|st|at|ave|camp|drive|dr|blvd|boulevard|road|rd|place|terrace|way|highway)(?:(?:.+)(?:box\s\d+))?)', re.IGNORECASE),
+		'city_address_re': re.compile('((?:(?:\d+)(?:.+)|[A-Z][a-z]+\s)(?:l[a|i]ne|circle|court|ct|resv|st|at|ave|camp|dr(ive)?|blvd|boulevard|road|rd|place|terrace|way|highway\s*)(?:(?:.+)(?:box\s\d+))?)', re.IGNORECASE),
 		'rural_address_re': re.compile(r'((?:\b[P|p]\s*[O|o])\s*(?:[R|r][F|f][D|d])?\s+(?:[N|n]o\s+\d+)\s+[B|b]ox\s\d+)\s'),
 		'precinct1_re': re.compile('(\w+\s)+(?:P\s*R\s*E\s*C\s*I\s*N\s*C\s*T)(?:(?:\sNO\s)*(\d+))*'),
 		'precinct2_re': re.compile('(\w+\s)+(?:P\s*R\s*E\s*C\s*I\s*N\s*C\s*T)(?:(?:\sNO\s)*(\d+))*')
@@ -30,8 +31,9 @@ REJECT_RULES = {
 	'end_of_page': True, # skip the row if it's empty
 	'too_many_addresses': True, # throw away rows with >1 address
 	'skipped_header': True, # throw away rows with header information
-	'name_failed': False, # throw away row if name not found
-	'address_failed': False # throw away row if address not found
+	'name_failed': False, # don't throw away row if name not found
+	'address_failed': False, # don't throw away row if address not found
+	'malformed_row': True # if number of columns is incorrect, toss the row
 }
 
 '''
@@ -74,7 +76,7 @@ def postprocess_rows(task, page):
 
 	 	results.append(row)
 	
-	if len(results) > 3: #chosen arbitrarily
+	if len(results) > 3: # chosen arbitrarily
 		page['rows'] = results
 	else:
 		page['rows'] = []
@@ -91,13 +93,16 @@ def postprocess_columns(row, page, task):
 	if comma2:
 		row = re.sub(comma2.group(1), ' ' + comma2.group(2), row)
 
-	#cols = row.split(",")
-	#if 2 < len(cols) > 2 or cols[0] == '':
-	#	task._errors['malformed'] += 1
-	#	continue		
-
 	row = row + "," + str(page._precinct) + "," + str(page._precinctno)	
 	row = ','.join([el.strip() for el in row.split(",")])
+
+	cols = row.split(",")
+	if 8 < len(cols) < 6 or cols[0] == '':
+		e = 'malformed_row'
+		task._errors['e'] += 1
+		if REJECT_RULES[e]:
+			row = None
+			# XXX log these failures
 	return row
 
 '''
@@ -106,12 +111,15 @@ These are conditional on county-level rules. This function also replaces some
 common mistakes with corrections.
 '''
 def extract_newlines(page, task):
+
 	delims = REGEXES[task.county]['delims']
+	# XXX move to preprocess page function?
 	pagetext = re.sub(r'-', ' ', page.text)
 	pagetext = re.sub(r'R\s*F\s*D', 'RFD', pagetext)
-	#pagetext = re.sub(r'D?\s*e\s*m(?:o?c?r?a?t?)?', 'Dem', pagetext) # XXX move to preprocess page function?
-	#pagetext = re.sub(r'R?\s*e\s*p(?:\s*ubl?\s*i?[c|o]?\s*a?\s*n?)?', 'Rep', pagetext)
-	#pagetext = re.sub(r'Dec(?:line(?:s)?)? [T|t]o [S|s]tate', 'Declines', pagetext)
+	pagetext = re.sub(r'st\s*udent', 'student', pagetext)
+	pagetext = re.sub(r'D\s*e\s*m(?:o?c?r?a?t?)', 'Dem', pagetext) 
+	pagetext = re.sub(r'R\s*e\s*p?(?:\s*u\s*b\s*l?\s*i?[c|o]?\s*a?\s*n?)', 'Rep', pagetext)
+	pagetext = re.sub(r'Dec(?:line(?:s)?)? [T|t]o [S|s]tate', 'Declines', pagetext)
 
 	for delim in delims:
 		pagetext = re.sub(delim, "," + delim.strip()+'\n', pagetext)
@@ -123,7 +131,7 @@ def extract_newlines(page, task):
 This function finds precinct and precinct numbers and sets the page attribute 
 for precinct and precicnt number accordingly.
 '''
-def extract_precinct(page, task):
+def extract_precinct(page, task):		
 	precinct1_re = REGEXES[task.county]['precinct1_re']	
 	precinct2_re = REGEXES[task.county]['precinct2_re']	
 	pagetext = page.text
@@ -131,13 +139,9 @@ def extract_precinct(page, task):
 	precinct = re.search(precinct1_re, pagetext) # XXX append precinct name to each row
 	if precinct and 'REGISTRATION' in set(precinct.groups()):
 		precinct = re.search(precinct2_re, pagetext) # XXX append precinct name to each row
-	if precinct:
-		page._precinct = precinct.group(1)
-		page._precinctno = precinct.group(2)
-	else:
-		page._precinct = None
-		page._precinctno = None
-
+	if precinct:			
+		page['precinct'] = precinct.group(1)
+		page['_precinctno'] = precinct.group(2)
 	return page
 
 '''
@@ -165,14 +169,14 @@ def extract_address(row, task, page):
 	return row
 
 '''
-Uses county-specific regex to detect full names.Will skip row if the rule
+Uses county-specific regex to detect full names. Will skip row if the rule
 is set to True.
 '''
 def extract_name(row, task, page):
 	name_re = REGEXES[task.county]['name_re']
 	name_found = re.search(name_re, row)
 	if name_found:
-		row = re.sub(name_found.group(0), ','.join(name_found.groups()) + ',', row)
+		row = re.sub(name_found.group(0), ' '.join(name_found.groups()) + ',', row)
 	if not name_found:
 		e = 'name_failed'
 		task._errors[e] += 1
