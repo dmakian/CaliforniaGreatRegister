@@ -2,15 +2,17 @@ import sys, os, codecs, re, logging, csv
 from collections import defaultdict, OrderedDict
 from pprint import pprint
 import rules
+import rules
 
 # XXX Get a csv with just names, string, and partyid to brad
-# XXX Count number of characters in a page, number of characters detected per row, sum number of row 
-# lengths over total characters for estimate of page completion
+# XXX Count number of characters in a page, number of characters detected per row, sum number of row, lengths over total characters for estimate of page completion
 # Best guess of bad lines = if character count > 60 chars
 # Add row-level failures to the summary file
+# Add another column to roll_stats that consists of successful pages
 
-#OUTDIR = '/home/rjweiss/shared/CaliforniaGreatRegister/cleaned' # XXX Move this to logging.yaml
-OUTDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
+# XXX Move this to a config file or something similar.
+INDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
+OUTDIR = '/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data'
 
 class Page(dict):
 
@@ -66,13 +68,18 @@ class Page(dict):
 	'''Reads the header for each page and sets page attributes accordingly.'''
 	def parse_file(self):
 		lines = self.rawtext.split(u'|')
-		match = re.match(r'(\w+county)_(\d+)-(\d+)',lines[0])
+		match = re.match(r'(\w+(?:county))_(\d+)-(\d+)',lines[0])
 		if not match:
-			match = re.match(r'(\w+county)(?:_\d+)?_(\d+)-(\d+)',lines[0])
+			match = re.match(r'(\w+(?:county))(?:_\d+)?_(\d+)-(\d+)',lines[0])
 		if match:
+			county = match.group(1).split('county')[0]					
 			self._id = match.group(3)
 			self._rollnum = match.group(2)
-			self._text = ''.join(lines[4:])	
+			self._text = ''.join(lines[4:])
+
+			if self._rollnum < 14 and county == 'sanbernardino':
+				return False
+
 			return True
 		else:
 			return False
@@ -88,9 +95,10 @@ class ExtractionTask(object):
 		self._failed_pages = []
 		self._text = None
 		self._total_pages = 0
-		self._page_path = os.path.join(OUTDIR, county + '.txt')		
+		self._page_path = os.path.join(INDIR, county + '.txt')		
 		self._ppr = defaultdict(int)
 		self._extracted_pages = []
+		self._roll_counts  = {'total': defaultdict(int),'failed': defaultdict(int)}
 		self.logger.info('creating {county} extractor'.format(county=county))
 
 	@property
@@ -103,8 +111,7 @@ class ExtractionTask(object):
 	
 	
 	'''
-	Opens the appropriate county file, stores the lines in the instantiated ExtractionTask object,
-	and counts the number of lines found in the file.
+	Opens the appropriate county file, stores the lines in the instantiated ExtractionTask object, and counts the number of lines found in the file.
 	'''
 	def load_data(self):
 		with codecs.open(self._page_path, 'r', 'utf8') as infile:
@@ -116,8 +123,9 @@ class ExtractionTask(object):
 
 	'''Opens success file and writes results to county-specific files'''
 	def write_successes(self):
-		with codecs.open('{county}_successes.txt'.format( # XXX Writing is slow and sloppy
-			county=self.county), 'a', 'utf8') as outfile:
+		filepath = os.path.join(OUTDIR, '{county}_successes.txt'.format(
+			county=self.county))
+		with codecs.open(filepath, 'a', 'utf8') as outfile:
 				for page in self._extracted_pages:
 					for row in page['rows']:
 						outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
@@ -126,9 +134,10 @@ class ExtractionTask(object):
 	'''Opens stats file and writes results for each county's extraction performance'''
 	def write_stats(self):
 		ordered_fieldnames = sorted(OrderedDict(self._stats))
-		first_entry = os.path.exists('county_stats.txt')
-		with codecs.open('county_stats.txt'.format(
-			county=self.county), 'a', 'utf8') as outfile:
+		filepath = os.path.join(OUTDIR, 'county_stats.txt'.format(
+			county=self.county))
+		first_entry = os.path.exists(filepath)
+		with codecs.open(filepath, 'a', 'utf8') as outfile:
 			writer = csv.DictWriter(outfile, fieldnames=ordered_fieldnames)
 			if not first_entry:
 				writer.writeheader()
@@ -136,10 +145,12 @@ class ExtractionTask(object):
 
 	'''Opens failures file and writes results for each county's failed pages'''
 	def write_failed_pages(self):
+		filepath = os.path.join(OUTDIR, '{county}_failures.txt'.format(
+			county=self.county))
+	
 		if len(self._failed_pages) > 0:
 			self.logger.info('writing {county} failures to file'.format(county=self.county))
-			with codecs.open('{county}_failures.txt'.format(
-				county=self.county), 'a', 'utf8') as outfile:
+			with codecs.open(filepath, 'a', 'utf8') as outfile:
 				for line in self._failed_pages:
 					outfile.write("%s\n" % line)
 
@@ -150,13 +161,18 @@ class ExtractionTask(object):
 		self.write_stats()
 
 	'''Computes a few task and average page statistics for each county.'''
-	def collect_stats(self):
-		num_failed_pages = len(self._failed_pages)
+	def collect_county_stats(self):
+		self.collect_roll_stats()
+		if self._failed_pages:
+			#num_failed_pages = len([page for page in self._failed_pages if len(page) > 325])
+			num_failed_pages = len([page for page in self._failed_pages])
+		else:
+			num_failed_pages = 0
 		num_successes = float(self._total_pages - num_failed_pages)
 		extraction_ratios = self._ratios
 		num_rows = [int(el[2]) for el in extraction_ratios if el[2] > 0]
 		ratios = [int(el[3])/float(el[2]+1) for el in extraction_ratios]
-		avg_rows = sum(num_rows) / num_successes
+		avg_rows = sum(num_rows) / num_successes		
 		avg_ratios = sum(ratios) / len(ratios)
 		avg_ppr = sum(dict(self._ppr).values())/len(dict(self._ppr).keys())
 		self._stats = dict(self._errors)
@@ -168,34 +184,57 @@ class ExtractionTask(object):
 			'county': self._county,
 			'total_pages': int(self._total_pages)})		
 
+	'''Computes a few task and average page statistics for each county.'''
+	def collect_roll_stats(self):
+		filepath = os.path.join(OUTDIR, 'roll_stats.txt'.format(
+			county=self.county))
+
+		counts = defaultdict(dict)
+		for el in self._roll_counts.keys():
+			for k, v in self._roll_counts[el].items():
+				counts[k][el] = v
+
+		counts = dict(counts)
+
+		first_entry = os.path.exists(filepath)
+		with codecs.open(filepath, 'a', 'utf8') as outfile:
+			if first_entry:
+				outfile.write('county,rollnum,totalpages,failedpages\n')
+			for k, v in counts.items():
+				if 'failed' not in v.keys():
+					v['failed'] = 0
+				outfile.write('{c},{r},{t},{f}\n'.format(
+					c=self.county,r=k,t=v['total'],f=v['failed']))
+			
 	def extract_rows(self, page):
-		page.update(rules.extract_newlines(page, self))
-		page.update(rules.extract_precinct(page, self))
+		page.update(rules.extract_newlines(page=page, task=self))
+		page.update(rules.extract_precinct(page=page, task=self))
 		page = rules.postprocess_rows(self, page)
 
-		if page['rows']:
+		if page['rows']:			
 			self.logger.debug('{county},{id},{rollnum},{num}'.format(
 				county=self._county, num=len(page['rows']), id=page.id, rollnum=page.rollnum))
  		else:
  			page._errors['no_rows_found'] += 1
- 			#self._failed_pages.append(page)
+ 			return False
 
- 		return page	
+ 		return True	
 
 	def extract_columns(self, page):
  		results = []
 
 	 	for row in page['rows']:
 	 		result = rules.extract_address(row, self, page)
-			result = rules.extract_name(result, self, page)
-			result = rules.postprocess_columns(result, page, self)
+			#result = rules.extract_name(result, self, page)
+			#result = rules.postprocess_columns(result, page, self)
 			results.append(result)
 		
 		if len(results) > 1:
 			page['rows'] = results
 		else:
  			page._errors['no_columns_found'] += 1
- 			#self._failed_pages.append(page)
+ 			self._failed_pages.append(page)
+ 			return False
 
  		return page
 
@@ -207,23 +246,43 @@ class ExtractionTask(object):
 	def start(self):
 		self.load_data()
 		self.logger.info('starting {county} extraction'.format(county=self.county))
-
+		current_roll = 0
+		counts = defaultdict(int)
+		
 		for line in self._county_file:
 			page = Page(line)
+			next_roll = page.rollnum
+			self._roll_counts['total'][next_roll] += 1
+			if next_roll != current_roll:
+				current_roll = next_roll				
+				self.logger.info('starting roll number {rollnum}'.format(rollnum=current_roll))
+		
 			if page.has_valid_data():				
-				page = self.extract_rows(page)
-				if page:
-					page = self.extract_columns(page)
-					self._ppr[page.rollnum] += 1
-					self._ratios.append((page.id, page.rollnum, len(page['rows']), len(page.text)))
-					self._extracted_pages.append(page)
+				page_has_rows = self.extract_rows(page=page)
+				if page_has_rows:		
+					formatted_page = self.extract_columns(page)					
+					if formatted_page:
+						self._ppr[formatted_page.rollnum] += 1
+						self._ratios.append((formatted_page.id, formatted_page.rollnum, len(formatted_page['rows']), len(formatted_page.text)))
+						self._extracted_pages.append(formatted_page)
 				else:
 					self.logger.debug('{county},{x},{y}'.format(county=self.county, x=page.id, y=page.rollnum))
 					self._failed_pages.append(page)
-					continue			
+					self._ppr[page.rollnum] += 1
+					self._ratios.append((page.id, page.rollnum, 1, 1))
 
-		self.logger.info('{county} extraction complete, {x} page(s) failed to parse'.format(county=self.county, x=len(self._failed_pages)))
-		self.collect_stats()
+					self._roll_counts['failed'][page.rollnum] +=1 
+					counts[page.rollnum] += 1
+					continue
+
+			#break
+
+		self._roll_counts['failed'] = counts
+		#pprint(dict(counts))
+
+		self.logger.info('{county} extraction complete, {x} page(s) failed to parse'.format(county=self.county, x=len([page for page in self._failed_pages ])))
+#		self.logger.info('{county} extraction complete, {x} page(s) failed to parse, {y} pages had parsing errors'.format(county=self.county, x=len(self._failed_pages, y=))) XXX needs number of pages that had a bad row
+		self.collect_county_stats()
 		self.write_summary()
 
 def run(counties):
