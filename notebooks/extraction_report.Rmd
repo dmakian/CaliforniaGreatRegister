@@ -1,0 +1,74 @@
+---
+title: "Great Register Summary report"
+author: "Rebecca Weiss"
+date: "March 7, 2016"
+output: html_document
+---
+
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(plyr)
+library(reshape)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(readr)
+options(scipen=100000)
+setwd('/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data')
+```
+
+# County statistics
+```{r}
+year_dates = read_csv('https://raw.githubusercontent.com/rjweiss/CaliforniaGreatRegister/master/year_dates.csv')
+pop = read_csv("https://raw.githubusercontent.com/rjweiss/CaliforniaGreatRegister/master/populations.csv")
+pop = melt(as.data.frame(pop), id = 'year')
+pop$year = as.character(pop$year)
+pop$value = as.numeric(pop$value)
+ggplot(pop, aes(x=year, y=value, fill=variable, color=variable)) + geom_line() + theme_gdocs() + scale_color_tableau() + ggtitle('Observed populations of each county by decennial census')
+```
+
+### More on counties
+
+```{r}
+alameda = read_csv('/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data/alameda_successes.txt', trim_ws=T)
+sanbernardino = read_csv('/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data/sanbernardino_successes.txt', trim_ws=T)
+
+# alameda_rows_pp = ddply(alameda, .(rollnum, pagenum), summarize, 
+#                      n=length(pagenum))
+
+alameda_rows_roll = ddply(alameda, .(rollnum), summarize, 
+                     n=length(pagenum))
+alameda_rows_roll$county = 'alameda'
+
+# sanbernardino_rows_pp = ddply(sanbernardino, .(rollnum, pagenum), summarize, 
+#                      n=length(pagenum))
+
+sanbernardino_rows_roll = ddply(sanbernardino, .(rollnum), summarize, 
+                     n=length(pagenum))
+sanbernardino_rows_roll$county = 'sanbernardino'
+
+row_counts = rbind(alameda_rows_roll, sanbernardino_rows_roll)
+row_counts = merge(row_counts, year_dates, by=c('county', 'rollnum'))
+
+ggplot(row_counts) + 
+  geom_bar(data=pop, aes(x=year, y=value, fill=variable), stat='identity', position='dodge') + scale_fill_tableau() +
+  geom_point(aes(x=year, y=n, color=county), position='dodge') + scale_color_gdocs() + coord_flip()
+  ```
+
+## Extraction task summary
+```{r}
+county_stats = read.csv('county_stats.txt')
+```
+
+## Roll-level statistics
+```{r, echo=FALSE}
+roll_stats = read_csv('/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data/roll_stats.txt', col_names=F)
+names(roll_stats) = c('county','rollnum','totalpages','failedpages')
+roll_stats$failurerate = as.numeric(roll_stats$failedpages)/as.numeric(roll_stats$totalpages)
+foo = merge(roll_stats, year_dates, by=c('county', 'rollnum'))
+foo$totalpages = as.numeric(foo$totalpages)
+foo$failedpages = as.numeric(foo$failedpages)
+#foo$rollnum = as.numeric(foo$rollnum)
+df = melt(foo, id=c('county','year', 'rollnum'), measure.vars = 'failurerate')
+
+ggplot(df, aes(x=year, y=value, fill=county)) + geom_bar(stat='identity', position='dodge') + coord_flip() + scale_fill_tableau() + theme_fivethirtyeight() + ggtitle('Extraction failure rates (failed pages / total pages)')
+```

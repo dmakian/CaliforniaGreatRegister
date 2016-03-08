@@ -14,8 +14,13 @@ class Page(dict):
 		self.logger = logger or logging.getLogger(__name__)
 		self._id = None
 		self._rollnum = None
+<<<<<<< Updated upstream
 		self.precinct = None
 		self.precinctno = None
+=======
+		self._precinct = ""
+		self._precinctno = ""
+>>>>>>> Stashed changes
 		self._text = None
 		self._numlines = 0
 		self._rawtext = rawtext # XXX Consider collapsing into "text"
@@ -39,6 +44,17 @@ class Page(dict):
 	@property
 	def rollnum(self):
 	    return self._rollnum
+<<<<<<< Updated upstream
+=======
+
+	@property
+	def precinct(self):
+	    return self._precinct
+
+	@property
+	def precinctno(self):
+	    return self._precinctno
+>>>>>>> Stashed changes
 	
 	@property
 	def rawtext(self):
@@ -111,13 +127,32 @@ class ExtractionTask(object):
 
 	'''Opens success file and writes results to county-specific files'''
 	def write_successes(self):
+		ordered_fieldnames = ['county','rollnum','pagenum','name','address','occupation','precinct','precinctno', 'pid']
 		filepath = os.path.join(OUTDIR, '{county}_successes.txt'.format(
 			county=self.county))
+		first_entry = os.path.exists(filepath)
+
 		with codecs.open(filepath, 'a', 'utf8') as outfile:
+<<<<<<< Updated upstream
 			for page in self._extracted_pages:
 				for row in page['rows']:
 					outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
 					#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
+=======
+			writer = csv.DictWriter(outfile, fieldnames=ordered_fieldnames)
+			if not first_entry:
+				writer.writeheader()
+			for page in self._extracted_pages:
+				for row in page['rows']:
+					if row:
+						writer.writerow(row)
+					else:
+						# XXX log error, get index too
+						continue
+
+#						outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
+						#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
+>>>>>>> Stashed changes
 	
 	'''Opens stats file and writes results for each county's extraction performance'''
 	def write_stats(self):
@@ -261,9 +296,7 @@ class ExtractionTask(object):
 					self._roll_counts['failed'][page.rollnum] +=1 
 					counts[page.rollnum] += 1
 					continue
-
 			#break
-
 		self._roll_counts['failed'] = counts
 		#pprint(dict(counts))
 

@@ -1,4 +1,4 @@
-import re, logging, pprint
+import re, logging, sys
 from pprint import pprint
 
 logger = logging.getLogger(__name__)
@@ -15,7 +15,7 @@ REGEXES = {
 		'precinct2_re': re.compile('(?:REGISTRATION)\s+(?:P\s*R\s*E\s*C\s*I\s*N\s*C\s*T*\s*)*([A-Z]+\s)+(?:[N|n][oO|]\s)(\d+)')
 	},
 	'sanbernardino': {
-		'delims': ['Dem', 'Rep', 'Declines', 'Socialist', 'Progressive'],
+		'delims': ['Dem', 'Rep', 'Declines', 'Decl', 'Socialist', 'Progressive'],
 		'name_re': re.compile('([A-Z][a-z]+\s)((?:[M\s*i\s*s\s*s|M\s*r\s*s]\s)*(?:(?:[A-Z][a-z]*\s){1}(?:[A-Z][a-z]*?\s){1}))'),
 		'street_re': re.compile(r'(line|livery|dr(ive)?|c(?:our)?t|resv|st(?:reet)?|at|a?\s*ve(?:nue)?|camp|dr|blvd|boulevard|r?oad|rd|place|terrace|way|highway\s*)', re.IGNORECASE),
 		#'city_address_re': re.compile(r'((?:\d+\s)|\s(?:W|E|N|S)\s(?:\w+\s)*(?:court|ct|street|st|at|avenue|ave|camp|blvd|boulevard|road|rd|place|pl|terrace|highway|way)\s,)', re.IGNORECASE),
@@ -93,6 +93,7 @@ def postprocess_columns(row, page, task):
 	if comma2:
 		row = re.sub(comma2.group(1), ' ' + comma2.group(2), row)
 
+<<<<<<< Updated upstream
 	if 'precinct' and 'precinctno' in page.keys():
 		row = row + "," + str(page['precinct']) + "," + str(page['precinctno'])
 		row = ','.join([el.strip() for el in row.split(",")])
@@ -105,6 +106,44 @@ def postprocess_columns(row, page, task):
 				row = None
 				# XXX log these failures
 	return row
+=======
+	# row = row + "," + str(page['_precinct']) + "," + str(page['_precinctno'])	
+	# row = ','.join([el.strip() for el in row.split(",")])
+
+	row = row.split(',')
+	if len(row) != 4 or row[0] == '':
+		e = 'malformed_row'
+		task._errors['e'] += 1
+		if REJECT_RULES[e]:
+			#row = None
+			return None
+			# XXX log these failures	
+
+	if task.county == 'alameda':
+		return {
+			'name': row[0],
+			'address': row[1],
+			'occupation': row[2],
+			'pid': row[3],
+			'precinct': page.precinct,
+			'precinctno': page.precinctno,
+			'county': task.county,
+			'rollnum': page.rollnum,
+			'pagenum': page.id
+		}
+	if task.county == 'sanbernardino':
+		return {
+			'name': row[0],
+			'address': row[2],
+			'occupation': row[1],
+			'pid': row[3],
+			'precinct': page.precinct,
+			'precinctno': page.precinctno,
+			'county': task.county,
+			'rollnum': page.rollnum,
+			'pagenum': page.id
+		}
+>>>>>>> Stashed changes
 
 '''
 This function inserts newline characters according to the delimiter regex.
@@ -141,9 +180,15 @@ def extract_precinct(page, task):
 
 	if precinct and 'REGISTRATION' in set(precinct.groups()):
 		precinct = re.search(precinct2_re, pagetext) # XXX append precinct name to each row
+<<<<<<< Updated upstream
 	if precinct:			
 		page['precinct'] = precinct.group(1)
 		page['precinctno'] = precinct.group(2)
+=======
+	if precinct:
+		page._precinct = precinct.group(1)
+		page._precinctno = precinct.group(2)
+>>>>>>> Stashed changes
 	return page
 
 '''
