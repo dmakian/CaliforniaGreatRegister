@@ -14,13 +14,8 @@ class Page(dict):
 		self.logger = logger or logging.getLogger(__name__)
 		self._id = None
 		self._rollnum = None
-<<<<<<< Updated upstream
-		self.precinct = None
-		self.precinctno = None
-=======
 		self._precinct = ""
 		self._precinctno = ""
->>>>>>> Stashed changes
 		self._text = None
 		self._numlines = 0
 		self._rawtext = rawtext # XXX Consider collapsing into "text"
@@ -44,8 +39,6 @@ class Page(dict):
 	@property
 	def rollnum(self):
 	    return self._rollnum
-<<<<<<< Updated upstream
-=======
 
 	@property
 	def precinct(self):
@@ -54,7 +47,6 @@ class Page(dict):
 	@property
 	def precinctno(self):
 	    return self._precinctno
->>>>>>> Stashed changes
 	
 	@property
 	def rawtext(self):
@@ -133,12 +125,6 @@ class ExtractionTask(object):
 		first_entry = os.path.exists(filepath)
 
 		with codecs.open(filepath, 'a', 'utf8') as outfile:
-<<<<<<< Updated upstream
-			for page in self._extracted_pages:
-				for row in page['rows']:
-					outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
-					#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
-=======
 			writer = csv.DictWriter(outfile, fieldnames=ordered_fieldnames)
 			if not first_entry:
 				writer.writeheader()
@@ -152,7 +138,6 @@ class ExtractionTask(object):
 
 #						outfile.write("{id},{rollnum},{row}\n".format(id=page.id, rollnum=page.rollnum, row=row))
 						#self.logger.debug('line length is {x} n-grams'.format(x=len(row.split(' '))))
->>>>>>> Stashed changes
 	
 	'''Opens stats file and writes results for each county's extraction performance'''
 	def write_stats(self):

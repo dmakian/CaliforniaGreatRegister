@@ -93,23 +93,6 @@ def postprocess_columns(row, page, task):
 	if comma2:
 		row = re.sub(comma2.group(1), ' ' + comma2.group(2), row)
 
-<<<<<<< Updated upstream
-	if 'precinct' and 'precinctno' in page.keys():
-		row = row + "," + str(page['precinct']) + "," + str(page['precinctno'])
-		row = ','.join([el.strip() for el in row.split(",")])
-
-		cols = row.split(",")
-		if 8 < len(cols) < 6 or cols[0] == '':
-			e = 'malformed_row'
-			task._errors['e'] += 1
-			if REJECT_RULES[e]:
-				row = None
-				# XXX log these failures
-	return row
-=======
-	# row = row + "," + str(page['_precinct']) + "," + str(page['_precinctno'])	
-	# row = ','.join([el.strip() for el in row.split(",")])
-
 	row = row.split(',')
 	if len(row) != 4 or row[0] == '':
 		e = 'malformed_row'
@@ -143,7 +126,6 @@ def postprocess_columns(row, page, task):
 			'rollnum': page.rollnum,
 			'pagenum': page.id
 		}
->>>>>>> Stashed changes
 
 '''
 This function inserts newline characters according to the delimiter regex.
@@ -180,15 +162,9 @@ def extract_precinct(page, task):
 
 	if precinct and 'REGISTRATION' in set(precinct.groups()):
 		precinct = re.search(precinct2_re, pagetext) # XXX append precinct name to each row
-<<<<<<< Updated upstream
-	if precinct:			
-		page['precinct'] = precinct.group(1)
-		page['precinctno'] = precinct.group(2)
-=======
 	if precinct:
 		page._precinct = precinct.group(1)
 		page._precinctno = precinct.group(2)
->>>>>>> Stashed changes
 	return page
 
 '''
