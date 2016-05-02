@@ -5,8 +5,8 @@ import rules
 import rules
 
 # XXX Move this to a config file or something similar.
-INDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'
-OUTDIR = '/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data'
+INDIR = '/Users/rweiss/Documents/Stanford/ancestry/CaliforniaGreatRegister/cleaned'#/5pct'
+OUTDIR = '/Users/rweiss/Box Sync/CaliforniaGreatRegisters/staging_data'#/5pct  '
 
 class Page(dict):
 
@@ -119,7 +119,7 @@ class ExtractionTask(object):
 
 	'''Opens success file and writes results to county-specific files'''
 	def write_successes(self):
-		ordered_fieldnames = ['county','rollnum','pagenum','name','address','occupation','precinct','precinctno', 'pid']
+		ordered_fieldnames = ['county','rollnum','pagenum','name','address','occupation','gender','precinct','precinctno', 'pid']
 		filepath = os.path.join(OUTDIR, '{county}_successes.txt'.format(
 			county=self.county))
 		first_entry = os.path.exists(filepath)
@@ -130,7 +130,7 @@ class ExtractionTask(object):
 				writer.writeheader()
 			for page in self._extracted_pages:
 				for row in page['rows']:
-					if row:
+					if row:		
 						writer.writerow(row)
 					else:
 						# XXX log error, get index too
@@ -231,11 +231,13 @@ class ExtractionTask(object):
  		results = []
 
 	 	for row in page['rows']:
-	 		result = rules.extract_address(row, self, page)
-			result = rules.extract_name(result, self, page)
-			result = rules.postprocess_columns(result, page, self)
-			results.append(result)
-		
+	 		#pprint(row)
+	 		row = rules.extract_address(row, self, page)
+			row = rules.extract_name(row, self, page)
+			row = rules.postprocess_columns(row, page, self)
+			results.append(row)
+		#pprint(results)
+		#sys.exit()
 		if len(results) > 1:
 			page['rows'] = results
 		else:
@@ -256,8 +258,12 @@ class ExtractionTask(object):
 		current_roll = 0
 		counts = defaultdict(int)
 		
-		for line in self._county_file:
+		for line in self._county_file:			
 			page = Page(line)
+			if self._county == 'losangeles' and int(page.rollnum) > 99:
+				continue
+			if self._county == 'sanbernardino' and int(page.rollnum) > 14:
+				continue
 			next_roll = page.rollnum
 			self._roll_counts['total'][next_roll] += 1
 			if next_roll != current_roll:
@@ -266,7 +272,7 @@ class ExtractionTask(object):
 		
 			if page.has_valid_data():				
 				page_has_rows = self.extract_rows(page=page)
-				if page_has_rows:		
+				if page_has_rows:
 					formatted_page = self.extract_columns(page)					
 					if formatted_page:
 						self._ppr[formatted_page.rollnum] += 1
