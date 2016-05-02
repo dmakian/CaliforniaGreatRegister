@@ -27,7 +27,9 @@ if __name__ == '__main__':
     #logger.info('ended subsetter task')
     counties = [
         'alameda',
-        'sanbernardino'
+        #'sanbernardino',
+        #'sanfrancisco'
+        'losangeles'
     ]
 
     logger.info('starting extractor task')
