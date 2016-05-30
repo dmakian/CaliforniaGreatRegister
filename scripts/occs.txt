@@ -1,0 +1,3981 @@
+housewife
+salesman
+clerk
+retired
+laborer
+teacher
+carpenter
+hswf
+merchant
+homemaker
+mechanic
+engineer
+bookkeeper
+painter
+nurse
+secretary
+accountant
+housekeeper
+saleslady
+cook
+manager
+printer
+barber
+insurance
+none
+welder
+janitor
+butcher
+farmer
+foreman
+plumber
+fem housewife
+fireman
+physician
+musician
+baker
+civil engineer
+cashier
+waitress
+udent
+chauffeur
+waiter
+builder
+home
+warehouseman
+bank clerk
+grocer
+shipping clerk
+tailor
+auto mechanic
+broker
+Decline
+boilermaker
+police officer
+banker
+housewif e
+unemployed
+librarian
+or
+marine engineer
+blacksmith
+sheet metal worker
+sales manager
+porter
+housework
+shipfitter
+maid
+motorman
+superintendent
+clerical
+auditor
+pipefitter
+office manager
+office clerk
+buyer
+iron worker
+millman
+advertising
+molder
+music teacher
+school teacher
+saleswoman
+Central Ave
+letter carrier
+bank teller
+miner
+office work
+lawyer
+photographer
+fern housewife
+jeweler
+rigger
+realtor
+cabinet maker
+pressman
+social worker
+Hywd hswf
+packer
+seaman
+bartender
+shipwright
+er
+r
+switchman
+lumberman
+shoemaker
+brakeman
+longshoreman
+insurance broker
+mail carrier
+Colton Ave
+locomotive engineer
+mining engineer
+insurance agent
+banking
+enographer
+mariner
+rancher
+male clerk
+clergyman
+purchasing agent
+cleaner
+poultryman
+telephone opr
+supervisor
+credit manager
+roofer
+timekeeper
+cement finisher
+oil worker
+Livermore farmer
+agent
+cement worker
+male merchant
+cannery worker
+professor
+writer
+cabinetmaker
+rician
+Anderson St
+homekeeper
+mining
+grocery clerk
+mechanical engineer
+city fireman
+office worker
+flanger
+moulder
+service man
+bookbinder
+bricklayer
+hawf
+male salesman
+glass worker
+trainman
+burner
+teaching
+Base Line
+male retired
+nue housewife
+Euclid Ave
+Livermore housewife
+apt manager
+checker
+hwf
+homemkr
+sign painter
+P O clerk
+traffic manager
+metal worker
+garage man
+male carpenter
+millwright
+Navy
+apartment manager
+locomotive fireman
+executive
+Niles housewife
+ironworker
+pipe fitter
+garage owner
+mill hand
+auto trimmer
+expressman
+policeman
+newspaperman
+trimmer
+presser
+boiler maker
+solicitor
+torney
+deckhand
+Army
+surveyor
+beautician
+Chino Ave
+newspaper man
+hod carrier
+publisher
+chief clerk
+apt house mgr
+Juan St
+Ramona Ave
+lithographer
+apt house manager
+ship builder
+millhand
+telegrapher
+hskpr
+reporter
+reet housewife
+tile setter
+Highland Ave
+nurseryman
+clerical work
+tailoress
+Truck Drive
+sales clerk
+glazier
+sales engineer
+chef
+ener
+auto worker
+caretaker
+optician
+groceryman
+teller
+chipper
+tool maker
+Archibald Ave
+helper
+auto painter
+receiving clerk
+designer
+widow
+comptometer opr
+auto dealer
+piano teacher
+male laborer
+insurance clerk
+sheet metal
+o
+life insurance
+insurance salesman
+mill man
+Evans St
+houewife
+housemaid
+Walnut Ave
+joiner
+public accountant
+fitter
+dental nurse
+essmaker
+hotel manager
+technician
+box maker
+Decoto laborer
+retired teacher
+undertaker
+vulcanizer
+Foothill Blvd
+sailor
+Pullman porter
+car cleaner
+newspaper
+supt
+credit man
+dairyman
+Livermore laborer
+cosmetician
+Citrus Ave
+dept manager
+View Ave
+creamery worker
+Central St
+file clerk
+landlady
+candy maker
+Pleasanton farmer
+shipbuilder
+Telephone Co
+bkkpr
+editor
+San Lorenzo hswf
+housewife R
+office nurse
+deputy sheriff
+fem
+cooper
+lumber clerk
+Medical St
+Orange St
+to St
+urer
+enog
+hotel clerk
+P 0 clerk
+Poplar St
+deck hand
+salesgirl
+S P employee
+ship fitter
+beauty opr
+maintenance man
+male engineer
+shipping
+R R clerk
+bootblack
+hmmkr
+broom maker
+av hswf
+dental technician
+salesmanager
+U S Navy
+city employee
+marine fireman
+5th St
+telephone man
+hotel keeper
+Edison Ave
+riveter
+furrier
+R R man
+paperhanger
+underwriter
+bottler
+cable splicer
+reg nurse
+embalmer
+signalman
+apt house owner
+housewife D
+toolmaker
+chman
+coppersmith
+Holt Ave
+San Lean hswf
+finisher
+Livermore hswf
+Newark housewife
+auto salesman
+carman
+fem homemaker
+iron molder
+U C professor
+lumber
+home maker
+sheetmetal worker
+cutter
+fire insurance
+Mountain Ave
+woodworker
+companion
+assembler
+importer
+warehouse man
+engr
+oiler
+6th St
+business
+h w
+janitress
+Niles hswf
+ship carpenter
+business man
+department manager
+Ely St
+hou ewife
+mail clerk
+erer
+forelady
+Hywd housewife
+av housewife
+iceman
+radio technician
+Mound St
+school principal
+furniture finisher
+garage
+Palm Ave
+proprietor
+singer
+locksmith
+male painter
+Niles laborer
+carpet layer
+Barton Ave
+boxmaker
+floor layer
+fem teacher
+ins broker
+Pleasanton housewife
+R R employee
+Miner At
+biller
+eng
+mill worker
+repairman
+trucker
+messenger
+physician and surgeon
+service manager
+tendant
+housemother
+printing
+pilot
+grocery
+garageman
+t housewife
+WPA
+business woman
+Eucalyptus Ave
+housewif
+housekpr
+sales
+peddler
+telephone employee
+mgr
+Creek Rd
+Decoto housewife
+metal finisher
+appraiser
+ens housewife
+o housewife
+radio engineer
+Mentone Ave
+man
+telephone engineer
+advertiser
+house mother
+bridgeman
+Haywd hswf
+apt mgr
+brick mason
+treasurer
+Housewife At
+o farmer
+towerman
+maintenance
+radio service
+surgeon
+truckman
+mech engineer
+rubber worker
+window trimmer
+body builder
+printing pressman
+sales mgr
+4th St
+ient
+Kingsley Ave
+principal
+Cross Road
+missionary
+Pleasanton hswf
+chemical engineer
+freight agent
+Schaefer Ave
+eno
+labore r
+7th St
+flagman
+special officer
+labor
+meter reader
+branch manager
+creamery man
+male bookkeeper
+Ramona St
+signal man
+tel opr
+cleaner and dyer
+aftsman
+Cedar St
+Housewife Camp
+milkman
+office
+San Lorenzo housewife
+grinder
+Cypress St
+mortician
+physician surgeon
+piano tuner
+shoe salesman
+P O employee
+core maker
+dietitian
+polisher
+wrapper
+metal polisher
+poultry
+a housewife
+apartment mgr
+sewing
+Antonio Ave
+Manning St
+Wilson Ave
+compositor
+Irvington housewife
+Eucalyptus St
+Francisco St
+Grand Ave
+ship joiner
+Walnut St
+lumber man
+o hswf
+soldier
+yman
+8th St
+car washer
+Crafton Ave
+Cypress Ave
+dealer
+housewifee
+miller
+office mgr
+ress
+San Lorenzo farmer
+wood worker
+male plumber
+Ohio St
+usherette
+window cleaner
+Hywd poultryman
+sign writer
+furniture dealer
+lab technician
+U S Army
+25th St
+metalsmith
+shop foreman
+Turner Ave
+hsewife
+er housewife
+Nevada St
+assemblyman
+civil engr
+officer
+retired soldier
+saw filer
+tool and die maker
+udent nurse
+9th St
+Newark hswf
+paint maker
+Phillips St
+sheet metal wkr
+warehouse foreman
+inventor
+paper hanger
+sales agent
+bond salesman
+Church St
+Creek Road
+fem housekeeper
+junior clerk
+S P clerk
+ship caulker
+civil eng
+mfgr
+nursing
+radio
+veterinarian
+y
+coremaker
+Etiwanda Ave
+Pepper Ave
+Tamarind St
+bookkpr
+hotelkeeper
+shingler
+trucking
+wire worker
+general manager
+housekeeping
+car repairer
+Hswf
+iron moulder
+lumber handler
+mailman
+s housewife
+tanner
+textile worker
+Cole St
+creamery
+news agent
+Palmetto St
+telephone
+title insurance
+warehouse
+display man
+orekeeper
+bakery salesman
+captain
+Juniper St
+mach
+male manager
+businessman
+Barton St
+Pepper St
+radio man
+fruit buyer
+mfg agent
+payroll clerk
+safety engineer
+San Lor hswf
+WPA worker
+Holt St
+home executive
+Newark laborer
+Telephone Ave
+traffic officer
+brewer
+Niles farmer
+tchr
+business manager
+elec engineer
+freight clerk
+Housewife Ave
+oil business
+s
+horseman
+machine opr
+repair man
+aircraft mechanic
+compt opr
+fem clerk
+fem none
+hsewfe
+marine engr
+marker
+Palmetto Ave
+Pleasanton laborer
+Washington St
+cleaning and dyeing
+comptometer
+credit mgr
+dept mgr
+traffic clerk
+Mrs St
+Pine Ave
+housewife I
+office man
+retired farmer
+Alder St
+engineering
+hodcarrier
+ice cream maker
+Philadelphia St
+to at
+e
+freight handler
+passenger agent
+cafe owner
+consulting engineer
+farming
+pensioner
+plumbing
+saleman
+sea captain
+special agent
+Taylor St
+Vine St
+mech
+trained nurse
+5th Ave
+automobile dealer
+cannery
+car builder
+dishwasher
+fisherman
+Lugonia Ave
+Magnolia Ave
+male butcher
+sausage maker
+Spruce St
+baker's helper
+brewery worker
+candymaker
+dental mechanic
+Tel Co employee
+Benito Ave
+boilermaker helper
+interviewer
+Manning Ave
+Mentone Blvd
+Rosa Ave
+express messenger
+ship worker
+Housewife Highway
+locomotive engr
+machine hand
+male printer
+Mill St
+Oleander St
+tire business
+Washington Drive
+a av hswf
+canner
+fruit merchant
+grocery manager
+houscwife
+housewifc
+ic
+loco engineer
+male fireman
+ship clerk
+Alabama St
+bank employee
+bank manager
+Hywd laborer
+Main St
+Mango St
+mechanical engr
+mfg
+gas fitter
+Hywd farmer
+San Lorenzo laborer
+secy
+Colton St
+Kingsley St
+kitchen helper
+Marigold St
+sexton
+broommaker
+bakery
+dining car waiter
+grad nurse
+ice man
+Larch St
+linoleum layer
+lumber business
+naval officer
+shipworker
+shoe repairer
+telephone repairman
+entertainer
+fern
+floorman
+jobber
+pullman porter
+S P Co
+ticket clerk
+wholesale grocer
+auto business
+Boyle Ave
+hotel man
+proofreader
+research
+Alvarado hswf
+chief engineer
+credit clerk
+floor manager
+houswife
+male accountant
+professor U C
+Alvarado housewife
+Arrow Highway
+brick layer
+Canyon Rd
+clerk S P Co
+Colton Blvd
+Edison St
+garage proprietor
+marine eng
+masseur
+merchant tailor
+Sierra Ave
+automobile
+er mariner
+furniture
+h wf
+housewf
+news dealer
+Archibald St
+furniture business
+ins agent
+Mission Rd
+tree surgeon
+building manager
+corsetiere
+deputy assessor
+fancy presser
+fern homemaker
+houseman
+male motorman
+o retired
+ockman
+pumper
+purchasing agt
+time checker
+Barton Rd
+billing clerk
+fem bookkeeper
+Merrill St
+Randall St
+fem nurse
+housewife e
+mailer
+masseuse
+ove mounter
+soap maker
+social wkr
+worker
+author
+bookkeeping
+car man
+caulker
+Centerville hswf
+coal dealer
+housewife l
+meter man
+Phillips Ave
+S P brakeman
+Sixth St
+telephone company
+dancer
+floorlady
+insurance underwriter
+apartment owner
+Bear Blvd
+Benson Ave
+defense worker
+glass blower
+ins underwriter
+labeler
+merchandiser
+Rancher Ave
+Sapphire St
+Tippecanoe St
+apartment house manager
+Livermore retired
+male barber
+mason
+mechanic's helper
+mechanical eng
+potter
+a
+advertising manager
+auto mech
+Bdno Ave
+Federal employee
+femn housewife
+food clerk
+junk dealer
+life underwriter
+ticket agent
+comptroller
+evedore
+hlousewife
+power machine opr
+serviceman
+shoe merchant
+time keeper
+a av housewife
+advertising man
+apt owner
+automobile mechanic
+bridge builder
+Cucamonga Ave
+Hellman Ave
+Jersey St
+mail handler
+male foreman
+male physician
+Mining At
+social service
+varnish maker
+vocal teacher
+auto assembler
+check clerk
+die maker
+fer housewife
+finance
+milk salesman
+Alvarado laborer
+egg candler
+hotel proprietor
+male farmer
+Merrill Ave
+radio mechanic
+sheet metal work
+shipper
+tower man
+Well Dr
+butler
+cafeteria
+esser
+exporter
+hsw
+male blacksmith
+nue clerk
+P 0 employee
+Tel Co
+vice president
+carpenter's helper
+claim agent
+howf
+male insurance
+newsboy
+retired army officer
+ron
+telegraph opr
+traffic mgr
+typewriter mechanic
+wholesaler
+Alvdo hswf
+ayman
+beauty parlor
+cigar maker
+clerical worker
+concrete worker
+houaewife
+house work
+ins
+legal secretary
+mining engr
+o laborer
+painting
+school nurse
+senior clerk
+ship rigger
+tallyman
+tinsmith
+tire merchant
+Acacia St
+apprentice
+Etiwanda St
+Fifth St
+furnace man
+Leuvan St
+lhousewife
+Linden St
+Magnolia St
+newspaper work
+beauty shop
+beer bottler
+femrn housewife
+fruit dealer
+h housewife
+house maid
+public health nurse
+Alice St
+Almond St
+carpente r
+cement work
+Centerville housewife
+governess
+house manager
+Housewife St
+lumber dealer
+Ninth St
+notary public
+Oaks Ave
+P G E
+shoe clerk
+shoe repairing
+to st
+tuck av housewife
+auto body builder
+blacksmith helper
+book binder
+building supt
+cigar clerk
+house mover
+ins salesman
+mining eng
+newspaper reporter
+paper ruler
+R R brakeman
+soda dispenser
+wharfinger
+24th St
+2nd Ave
+business agent
+cafeteria manager
+Canyon Road
+clerk S P
+Hemlock St
+key punch opr
+locomotive eng
+male
+retired merchant
+rooming house
+s laborer
+Sierra St
+tinner
+title searcher
+View St
+bonds
+eel worker
+lumber salesman
+meterman
+P G E employee
+P T T Co
+plant manager
+sales supervisor
+truck salesman
+auto wrecker
+baggageman
+Cedar Ave
+civil service
+dancing teacher
+hank clerk
+hotel maid
+Kern St
+Larch Ave
+mill foreman
+nut
+S P engineer
+aughtsman
+bill clerk
+child's nurse
+cleaning
+commission merchant
+crane man
+craneman
+handyman
+house painter
+Livermore rancher
+male agent
+mechanic helper
+nue salesman
+paper maker
+police sergeant
+special police
+405 S Second St
+6th Ave
+Ana Ave
+ball player
+bank examiner
+Citrus St
+Franklin St
+fruit packer
+housewfe
+insurance man
+Laurel St
+Lemon St
+loco fireman
+male builder
+Norton Ave
+Oak St
+oil man
+paint mixer
+Philadelphia Ave
+R R mail clerk
+tire man
+tuck housewife
+utility man
+Willow St
+apartment house owner
+army officer
+building superintendent
+dancing
+day work
+deliveryman
+hmemkr
+it housewife
+lousewife
+machine tender
+male teacher
+mech engr
+mother
+music
+plumber's helper
+poultry dealer
+RFD 3 farmer
+San Lor farmer
+wrecker
+alesman
+bridge tender
+chambermaid
+enameler
+Fontana Ave
+Franklin Ave
+fruit grower
+Jasper Ave
+Juan Ave
+labor foreman
+Lucas St
+male bartender
+male janitor
+male secretary
+nursery man
+Pacific St
+phone opr
+produce merchant
+proof reader
+publicity
+retired engineer
+Wabash Ave
+accounting
+Deputy Sheriff
+doorman
+express
+fern teacher
+furniture worker
+Hywd rancher
+Hywd retired
+ler
+produce
+slinger
+Walk housewife
+10th St
+Baker Ave
+Bdno St
+Benson St
+culinary worker
+Dessau St
+dietician
+e housewife
+Fifth Ave
+hanker
+Juanita St
+Lawton St
+Maple St
+Mission Road
+Orange Ave
+paper cutter
+poultry man
+telephone co
+bkpr
+cement man
+cosmetology
+eamfitter
+er fem housewife
+executive secretary
+galvanizer
+general clerk
+Hayd hswf
+her
+high school teacher
+iller
+leaderman
+Niles merchant
+Ana Rd
+Ana St
+assayer
+automobile worker
+cannery work
+carpenter foreman
+display manager
+expediter
+hswife
+Hywd clerk
+ink maker
+Linden Ave
+male broker
+market manager
+merchant marine
+mill owner
+organizer
+photo finisher
+plant superintendent
+retired physician
+roofing
+S P fireman
+Tamarind Ave
+tel engineer
+X ray technician
+Y M C A secretary
+cleaning business
+garage employee
+garage prop
+government employee
+housesmith
+housewie
+life insurance agent
+machine rigger
+nue retired
+policy writer
+sales girl
+ty
+wood carver
+1 Barst
+850 Gilbert St
+auto polisher
+cannery foreman
+disabled veteran
+floor lady
+golf professional
+grocery business
+hotel work
+insurance manager
+male grocer
+male tailor
+merchandising
+personnel manager
+Schaefer St
+Schaeffer Ave
+Tennessee St
+advertising agent
+apartment house
+C P A
+cafeteria worker
+cigar dealer
+horseshoer
+music tchr
+police
+supply clerk
+0 Vict
+a fem housewife
+Beech St
+candy packer
+Elm St
+filing clerk
+fuel dealer
+Government employee
+hookkeeper
+liquor dealer
+mail man
+male police officer
+marine insurance
+model
+Newark farmer
+Ninth st
+nut housewife
+o carpenter
+pantryman
+research engineer
+Rialto Ave
+Roswell St
+tilesetter
+Truck drive
+boilermaker's helper
+bridge carpenter
+garage foreman
+housew ife
+hswfe
+lab tech
+lumber merchant
+marceller
+mining man
+nursery
+nut fem housewife
+odian
+parts clerk
+promoter
+rear housewife
+winder
+1443 Cedar Ave
+2nd St
+bond broker
+carp
+cigar merchant
+Cunningham St
+deputy county clerk
+displayman
+et housewife
+fur finisher
+general work
+house
+housemover
+housewifec
+invalid
+Laurel Ave
+male cashier
+male mechanic
+Marcus St
+mech eng
+o nurse
+paper box maker
+Rancho Ave
+S P foreman
+San Lean farmer
+Sn Lor hswf
+telephone worker
+Walnut Rd
+warehouse manager
+apartment house mgr
+auto service
+brokerage
+cook's helper
+delivery man
+diamond setter
+examiner
+fruit business
+gas engineer
+general foreman
+grocery man
+groundman
+hotel owner
+merchant seaman
+Niles clerk
+publishing
+pump man
+RR clerk
+skilled laborer
+social service worker
+sprayer
+tire builder
+warehouse clerk
+warehouse supt
+540 E St
+automobile painter
+Brockman St
+candy worker
+Cherry St
+City fireman
+Corona Road
+dyer
+Eighth st
+escrow clerk
+express agent
+fire department
+Francis Ave
+Fremont Ave
+garment worker
+glove cutter
+hotel mgr
+ion
+Laborer Camp
+Lucas Ave
+male cook
+marine
+marine officer
+Mt Eden farmer
+radio announcer
+Redwood St
+Rincon Rd
+San Lorenzo clerk
+shoe maker
+showman
+spotter
+tel employee
+telephone supervisor
+warehouse worker
+advertising mgr
+beauty culture
+cabinet worker
+carpenter helper
+carrier
+Centerville farmer
+cooking
+floor finisher
+floor man
+glassworker
+Irvington laborer
+knitter
+Livermore miner
+male clergyman
+male horseman
+melter
+mgr apt house
+model maker
+Naval officer
+prac nurse
+radio service man
+research worker
+sawyer
+16th St
+Ada Ave
+Alder Ave
+Antonio St
+aurant
+auto
+bank officer
+City employee
+coach cleaner
+dock clerk
+eam fitter
+fire chief
+general agent
+itioner
+male chauffeur
+male porter
+marble cutter
+milk man
+mold maker
+PI housewife
+sales executive
+tele opr
+telephone clerk
+tool grinder
+Yucaipa Blvd
+apt hse mgr
+cannery supt
+canvasser
+Charles
+fem retired
+Fisher Body
+granite cutter
+home keeper
+hotel business
+insurance business
+Irvington hswf
+Livermore clerk
+M D
+Niles retired
+pipefitter helper
+retail merchant
+sailmaker
+scaler
+silversmith
+truck builder
+tuck
+y worker
+15th St
+art dealer
+av carpenter
+av clerk
+Banana St
+Barton Road
+broom making
+California St
+canning
+Centerville laborer
+Corona Ave
+delivery clerk
+Fern Ave
+fern clerk
+gas maker
+general helper
+general insurance
+general office work
+government clerk
+hbwf
+herton
+houseworker
+hwife
+linoleum worker
+liousewife
+male lumberman
+male miner
+male nurse
+Niles housekeeper
+ock clerk
+oil salesman
+Owner Camp
+Pacific Ave
+Pleasanton
+poultry business
+power mach opr
+prop
+reet clerk
+Schaffer Ave
+securities
+Shaffer Ave
+Sierra Drive
+slsmn
+Telephone St
+window washer
+basket maker
+bell
+glove maker
+Ihwf
+marble setter
+meter repairer
+nue merchant
+parts man
+refinery worker
+retiredl
+s retired
+salesm an
+secretarial
+telephone oper
+WPA laborer
+1617 Front St
+212 Bazoobuth St
+advertising salesman
+al clerk
+baggage clerk
+car loader
+casket trimmer
+cleaning dyeing
+creameryman
+department mgr
+fernm housewife
+Fitchburg
+fountain girl
+general office
+Highland St
+honsewife
+hosewife
+Irvington farmer
+Lilac St
+machine helper
+marble worker
+McKinley Ave
+Mountain Drive
+Park Ave
+personnel mgr
+Pine St
+rec clerk
+Sapphire Ave
+school tchr
+service rep
+teacher U C
+tern maker
+Tippecanoe Ave
+tire dealer
+truck man
+uart
+used car dealer
+Valencia St
+bridge man
+bus boy
+carman helper
+clerk D
+clerk R
+controller
+ess
+floorlayer
+glazer
+interpreter
+linotyper
+loftsman
+mach opr
+male letter carrier
+male mining
+male solicitor
+manager apt house
+manager apts
+Mark salesman
+mill work
+night clerk
+plant supt
+professional
+property manager
+R R emp
+raz housewife
+retired fireman
+s hswf
+sec
+sugar worker
+tailoring
+tally clerk
+Telephone Company
+weigher
+1128 E California St
+4 Main St
+402 D St
+account clerk
+Adams St
+automobile trimmer
+bakery worker
+bank
+blue printer
+bond trader
+book mender
+business mgr
+Carnelian St
+chmaker
+Commercial St
+Creek Blvd
+Deputy Assessor
+dish washer
+Eighth St
+Fourth St
+garage manager
+Gilbert St
+handy man
+Hawthorne St
+housewite
+Ihousewife
+insurance agt
+lahorer
+Lime Ave
+male waiter
+Mansa Rd
+merchandise
+Meridian St
+Midas St
+notary
+ousewife
+Pioneer Ave
+Randall Ave
+retail clerk
+rical engineer
+salad maker
+sanitary engineer
+shoe business
+Sparks St
+tuck av hswf
+tudent
+uart housewife
+wood turner
+Army officer
+automotive
+blacksmith's helper
+casket maker
+coal merchant
+coil winder
+fish dealer
+furniture man
+garage mechanic
+gas man
+hank teller
+hlwf
+hswl
+Hywd mechanic
+lab helper
+male brakeman
+male millman
+metal man
+mixer
+o clerk
+PBX opr
+president
+salesman D
+salesman R
+sculptor
+spring maker
+t clerk
+title examiner
+vice principal
+wire chief
+5 Main St
+6 Main St
+7 Main St
+Arrow Blvd
+av laborer
+av retired
+Bartlett St
+Benito St
+building
+C P accountant
+cobbler
+correspondent
+elec
+engine foreman
+export manager
+fern housekeeper
+Florida Ave
+gauger
+Glen Rd
+Glen Road
+hewf
+Hillview St
+hotel worker
+Jurupa Ave
+Jurupa St
+library clerk
+male baker
+mangle hand
+Mango Ave
+Marine
+Niles carpenter
+Norton St
+nothing
+Pepper Drive
+R R agent
+research work
+ro housewife
+S P Co clerk
+saloon keeper
+school
+ship's clerk
+special policeman
+th St
+Walker Ave
+Walker St
+welding
+well borer
+a opr
+accounting clerk
+adv manager
+auto repair
+bellboy
+bousewife
+brakeman S P
+cigarmaker
+contr
+corsetier
+elec welder
+ens hswf
+express handler
+fem saleslady
+harber
+harness maker
+head clerk
+house wife
+Hywd teacher
+ice salesman
+law clerk
+lunch room
+maintenance foreman
+merchandise broker
+news vender
+office wkr
+P G E Co
+parts manager
+printing business
+process server
+produce man
+realty broker
+religious
+retired nurse
+retired tchr
+route salesman
+San Lorenzo carpenter
+San Lorenzo retired
+school janitor
+searcher
+tea room
+tireman
+welder's helper
+wholesale butcher
+122 Highland Ave
+1620 E Grand Ave
+2 Main St
+503 Acoma St
+Ada St
+Alvarado farmer
+art teacher
+aurant keeper
+auto builder
+auto man
+automobiles
+barbe r
+Bartlett Ave
+can maker
+city clerk
+Corona Rd
+deaconess
+diet maid
+Foothill Dr
+fountain clerk
+Fremont St
+Garnet Ave
+glass business
+Grand St
+hotel
+hsf
+ining At
+Juniper Ave
+Lee St
+life ins
+Livermore carpenter
+male jeweler
+Mark retired
+mfg jeweler
+Mt Eden hswf
+New St
+news vendor
+P clerk
+painte r
+Pico St
+playground dir
+price clerk
+property owner
+Pumalo St
+retired Army officer
+Retired Camp
+sergeant of police
+Shafer Ave
+shop owner
+Southern Pacific
+supply man
+t
+telephone repair
+tuck av
+U S navy
+W P A
+washer
+Washington Dr
+av salesman
+boxer
+building and loan
+cabinet mkr
+cafeteria mgr
+car foreman
+cereal worker
+Decoto farmer
+division manager
+dyeing and cleaning
+e fem housewife
+fern none
+furniture packer
+garage worker
+garbage man
+huosewife
+Hywd hawf
+Hywd hwf
+land appraiser
+lerk
+linotype opr
+male cement worker
+male musician
+merch
+Merchant Marine
+mill wright
+millworker
+newspaper mailer
+ock raiser
+piano mover
+pipefitter's helper
+public weigher
+reet retired
+retire d
+ributor
+S P agent
+sales engr
+San Lorenzo rancher
+secretary treasurer
+shop superintendent
+sorter
+special police officer
+splicer
+spray painter
+tire salesman
+tool die maker
+tuck fem housewife
+welfare worker
+wood finisher
+1 St
+1931 Adams St
+19th St
+222 F St
+412 B St
+able
+Almond Ave
+assembly man
+boiler washer
+Boyle St
+brickmason
+bridge worker
+Bruce St
+Burnham St
+Bus Drive
+cafe manager
+carpet cleaner
+Center St
+chem engineer
+Chino RD
+chipper and caulker
+clerking
+cookie packer
+delivery
+dental tech
+department head
+elec eng
+employee
+er clerk
+er fern housewife
+erly
+fire dept
+floor polisher
+furniture salesman
+glass cutter
+govt employee
+hiousewife
+Hyd hswf
+ins clerk
+insurance examiner
+io housewife
+manuf
+Mayberry St
+ments
+mfg rep
+Mills St
+Mrs At
+Nevada St Rt 2 Box 22
+nursemaid
+Oleander Ave
+Pac Tel Tel Co
+painter's helper
+personnel
+plant engineer
+plant man
+reet salesman
+retired clergyman
+ro
+Rt 1 Pleasanton farmer
+sail maker
+sales eng
+Second Ave
+second officer
+Second St
+sheet metal wrkr
+shoe repair
+shovel engineer
+tile worker
+traffic man
+tray salesman
+Valley Blvd
+acetylene burner
+binder
+C S prac
+cap maker
+car repairman
+chef cook
+coiler
+comp opr
+creamery work
+elec engr
+er t housewife
+fanner
+fem home maker
+fem widow
+fern bookkeeper
+fry cook
+gunsmith
+hotel prop
+Hywd carpenter
+ive
+laborer D
+lead burner
+mother's helper
+multigraph opr
+newspaper agent
+ore manager
+packing
+pottery worker
+purch agt
+R R official
+radio dealer
+retired R
+rug cleaner
+S Lean hswf
+San Lean retired
+seafaring
+ship building
+shorthand reporter
+tank truck salesman
+teache r
+transfer business
+university professor
+violin maker
+waitres
+YMCA secretary
+1110 Roswell Ave
+12th St
+1411 Front St
+1496 Tippecanoe St
+15 Main St
+1509 N Euclid Ave
+28 Terracina Blvd
+29 Palms P 0 29 Palms via Whitewat
+2910 Macy St
+Apts housewife
+audit clerk
+auto finance
+automobile business
+Beryl St
+bindery worker
+Bonita St
+brass finisher
+Carpenter St
+carpet mechanic
+Ceres St
+chair caner
+cher
+Cherry Ave
+Cibola St
+clergy
+club manager
+commercial agent
+creamery business
+Crooks Ave
+dental surgeon
+deputy clerk
+die setter
+elerk
+Engineer At
+express clerk
+fancy spotter
+food broker
+Francis St
+furniture buyer
+furniture mover
+garment cutter
+Haywd laborer
+Helendale St
+hIwf
+hoewife
+honmemaker
+house cleaner
+householder
+Housewife
+housewife m
+Jacinto St
+jewelry salesman
+Knot Blvd
+Lee Ave
+lumber worker
+male civil engineer
+Mark housewife
+Med St
+Mills Ave
+motor coach opr
+newspaper writer
+nue
+Ontario Highway
+owner
+painter and paperhanger
+Palm St
+Pleasanton clerk
+powder man
+press feeder
+radio business
+radio salesman
+reet engineer
+RFD 3 hswf
+Robles Road
+S P waiter
+Schaffer St
+seafaring man
+service engineer
+tally man
+ticket seller
+track foreman
+unemp
+usher
+Apt 2 housewife
+apt house
+auto washer
+bank cashier
+bargeman
+baseball player
+beauty shop owner
+bookbinding
+branch mgr
+cement wkr
+chief of police
+creamery manager
+delivery boy
+deputy
+Deputy Co Clerk
+dock seaman
+freight traffic
+garage business
+hou sewife
+houeewife
+insurance adj
+junk peddler
+landscaper
+male bank clerk
+manage r
+marine surveyor
+metal dealer
+molder's helper
+nue housekeeper
+personnel clerk
+radiotrician
+reader
+reet
+route man
+ry
+s salesman
+sales promoter
+sales work
+secretarial work
+sheetmetal
+spinner
+tel repairman
+telephone switchman
+telephone work
+transfer man
+U S Government
+U S N R
+Union Oil Co
+vulcanizing
+warehouse work
+welder helper
+welder leaderman
+x ray technician
+1 Place
+117 Spruce St
+1376 Vine St
+1390 Tippecanoe St
+1402 Perris Hill Rd
+1503 Front St
+162 W C St
+1830 E 5th St
+2 St
+228 J St
+2530 Kern St
+3310 Cajon Blvd
+3960 Acre Lane
+a av salesman
+acetylene welder
+apt hs mgr
+Arrowhead Ave
+auto assembly
+baggage man
+bank auditor
+bank messenger
+bay pilot
+bookkeper
+business owner
+carpet cutter
+carpetlayer
+chemical engr
+cigar business
+cleaner dyer
+cleaners
+Colton Ave Rt 2 Box 231
+copy holder
+disabled
+dispenser
+dnt
+en
+Farmer Highway
+federal employee
+fern nurse
+field man
+frame maker
+gen foreman
+general housework
+Hemlock Ave
+houeswife
+housewi fe
+inn keeper
+Jr St
+King St
+l housewife
+male marine engineer
+male millhand
+manager apartments
+Margarita Ave
+merchant R
+millnan
+multigrapher
+Niles
+nurse R N
+nut fern housewife
+on housewife
+Ontario Ave
+ory worker
+packing house
+papermaker
+poultry raiser
+Prado Road
+produce buyer
+produce dealer
+R R fireman
+radiographer
+Ranger St
+red cap
+Rincon Road
+Rosa St
+S P employe
+salesmnan
+service mgr
+service salesman
+shade maker
+Sierra Way
+Sycamore St
+telephone eng
+Timoteo Rd
+traffic
+traffic agent
+traffic dept
+Twelfth St
+uart fem housewife
+uring
+y man
+ableman
+antique dealer
+bindery
+bond business
+business lady
+cable maker
+cannery man
+Centerville teacher
+Charles housewife
+city emp
+craftsman
+Decoto hswf
+employment mgr
+ens salesman
+ered nurse
+ex teacher
+filer
+foreman S P Co
+fountain manager
+grocer clerk
+Hywd salesman
+insurance mgr
+interior dec
+jewelry
+junk business
+ladies tailor
+male banker
+mfr's agent
+nue teacher
+office girl
+office secretary
+opr
+piano tchr
+poultry worker
+purch agent
+raz av
+raz av housewife
+raz av hswf
+raz fem housewife
+retired carpenter
+rodman
+rooming house mgr
+RR man
+s teacher
+saleaman
+Shell Oil Co
+sheriff
+sign hanger
+soc wkr
+Sunol housewife
+tool clerk
+tool designer
+transmission man
+trav salesman
+unoccupied
+waite r
+warehouse mgr
+1070 Roswell Ave
+1209 Front St
+1246 Del Rosa Ave
+1427 Perris Hill Rd
+14th St
+1511 Front St
+1890 W Highland Ave
+1938 Mallory St
+2169 Mallory St
+2230 Blake St
+230 San Bdno Ave
+2694 Macy St
+314 Cibola St
+4020 Newmark Ave
+413 C St
+541 Tippecanoe St
+5th Central Ave
+99 Orange St
+a av clerk
+a hswf
+Alvarado merchant
+auto parts
+auto repairer
+av merchant
+Bailey Ave
+bakery owner
+book seller
+Boulder Ave
+brass worker
+broommkr
+Browning Rd
+brush maker
+building service
+Chrysolite Ave
+city employe
+city treasurer
+claims agent
+college
+commercial
+concrete work
+consulting engr
+cont
+Cooper Ave
+Cottonwood St
+dock hand
+e nurse
+Euclid St
+faculty U C
+fem homekeeper
+fem merchant
+femr housewife
+femrn
+field engineer
+general laborer
+Grant St
+Griffith St
+groceries
+Hellman St
+Hill St
+housewife B
+ical nurse
+ice cream
+Iousewife
+Kentucky St
+lab
+labeling
+Laborer Ave
+Lake Blvd
+life insurance salesman
+ling salesman
+machinery dealer
+machinit
+Maco Camp
+male pressman
+Marygold Ave
+McCarty Rd
+mechani
+meter repairman
+milk business
+Mission Blvd
+Mountain St
+Mulberry St
+navy
+newsdealer
+nue carpenter
+office boy
+office deputy
+oil
+oil producer
+ovemounter
+paint mfg
+paper business
+petroleum engineer
+PG E employee
+physician and surg
+piano finisher
+produce business
+Pullman Co
+pumpman
+receiver
+reet laborer
+reet merchant
+retired U S Navy
+Roswell Ave
+S O employee
+salesma n
+Serv St
+shipfitter's helper
+shipping business
+social wrkr
+solderer
+sugar boiler
+Sunol hswf
+Sunset Dr
+tunnel worker
+wireworker
+X Ray technician
+agriculture
+aircraft worker
+ant
+Apt 3 housewife
+auto metal worker
+bakery clerk
+bank official
+bookeeper
+bus woman
+cafeteria work
+Chief of Police
+cotton mills
+counselor
+day worker
+desk clerk
+elev opr
+fireman S P
+foreman P G E
+haker
+hol av hswf
+home exec
+horse trainer
+house worker
+housewife i
+hsekpr
+insurance engineer
+ion foreman
+It housewife
+lhwf
+Livermore
+liveryman
+maintenance work
+male mail carrier
+male moulder
+manager apt
+Mary's College High School teacher
+Newark molder
+newspaper editor
+night foreman
+Niles teacher
+not employed
+Oakland hswf
+P G E clerk
+paint salesman
+prof
+purser
+reet bookkeeper
+reet carpenter
+repairer
+retailer
+retired D
+retired U S A
+retired U S Army
+rly
+rolman
+Rt 1 Pleasanton hswf
+Salesman
+San Lrnzo hswf
+sandwich maker
+scholar
+sheet metal man
+Sn Lrnzo hswf
+t retired
+t salesman
+tenographer
+tire shop
+tndt
+train man
+trainer
+transfer
+truck owner
+typewriter mech
+U C employee
+U C prof
+wool buyer
+1
+1095 W Arrow Highway
+11th St
+1205 Front St
+1211 Front St
+1329 N Chrysolite Ave
+1942 Porter St
+197 St
+202 Spruce St
+2026 Porter St
+2040 Adams St
+215 Walnut St
+2163 Kern St
+230 Valencia Ave
+2303 N Mountain Ave
+2404 N Euclid Ave
+2480 Ogden St
+2501 S Euclid Ave
+272 9th St
+3195 Duffy St
+321 Bazoobuth St
+33 Rose Ave
+408 E Foothill Blvd
+473 Washington Ave
+4th B St
+507 Acoma St
+510 D St
+530 Vict
+597 Cibola St
+651 Acoma St
+715 Downey Ave
+945 Chico Ave
+964 Bonnie St
+a salesman
+Acacia Ave
+Adelanto Road
+air mechanic
+Alabama St Rt 1 Box 14
+Ana Road
+Apt 1 housewife
+Apts teacher
+Armed Forces
+Auto Camp
+Auto Court
+auto merchant
+av painter
+bench hand
+Browning Ave
+business executive
+car polisher
+cement
+chief cook
+Clerk St
+counter girl
+Cucamonga St
+culinary
+dairy
+defense work
+Echo Drive
+Elm Ave
+employing printer
+Euclid ave
+expeditor
+fe housewife
+fen housewife
+Fire Dept
+foreman carpenter
+Freemont Ave
+fruit peddler
+Gene Camp
+glassblower
+Govt clerk
+Govt employee
+Haywd retired
+Helena Ave
+Helena St
+Hermosa Ave
+homemnaker
+hotel employee
+house cleaning
+house wrecker
+housemaker
+innkeeper
+iron wkr
+Jersey St Rt 1 Box 29
+lettercarrier
+Lilac Ave
+linotype
+Livermore merchant
+loan broker
+loco engr
+Luvan St
+mach helper
+mailcarrier
+male boilermaker
+male iron worker
+male lawyer
+marine superintendent
+Mark Hotel salesman
+Marley Ave
+McCarty Road
+merchandise mgr
+Mission Rd Rt 2 Box 279
+mould maker
+nailer
+news boy
+Nice St
+note teller
+nue insurance
+Ocean Highway
+Ohio St Rt 2 Box 196
+oral surgeon
+P O carrier
+Pac Tel Tel
+phys
+Pioneer St Rt 2 Box 704
+Pipe Line
+pipe welder
+pipehanger
+Pleasanton retired
+press hand
+radio work
+retire
+retired banker
+rooming house manager
+s clerk
+s merchant
+salesmn
+Sycamore Ave
+Transient Camp
+Turner St
+U S Marine
+veteran
+View Ave Rt 2 Box 263
+wholesale produce
+a av retired
+a e housewife
+adv mgr
+advertising business
+agt
+aleman
+auto assemblyman
+ballplayer
+block cutter
+bookkeepe r
+bronze worker
+building engineer
+building trades
+candy mfg
+candy wrapper
+canning business
+capt fire dept
+carlenter
+chainman
+cleaner and presser
+con engineer
+copy writer
+county employee
+deck officer
+deckhand S P
+Dep Co Clerk
+diemaker
+fire ins
+flange turner
+flight engineer
+furnace tender
+gasfitter
+gen office work
+general office clerk
+glovemaker
+holder on
+hospital maid
+houisewife
+housewife H
+housewile
+insurance sales
+liquor business
+machinery
+male expressman
+male newspaperman
+male superintendent
+marble mason
+merchan t
+mill supt
+moulder's helper
+newsman
+nurse maid
+office employee
+oil refiner
+ore
+P O foreman
+photography
+pile man
+plumber helper
+police dept
+policewoman
+porte r
+power machine
+produce broker
+prof U C
+R R switchman
+radio tech
+retired naval officer
+retired U S N
+ro fem housewife
+s Niles housewife
+salesan
+San Lorenzo mechanic
+ship painter
+shipping dept
+shoe cobbler
+soda fountain
+teacher of music
+tern fitter
+tile roofer
+time clerk
+trackman
+tuck av clerk
+tutoring
+University professor
+ve housewife
+vr
+wf
+wireman
+Y W C A secretary
+1037 E Base Line
+109 Bonita Ct
+120 Spruce St
+125 Paloma Rd
+128 Highland Ave
+1305 Perris Hill Rd
+133 Martin St
+1337 Barton St
+1375 Glasgow Ave
+1403 Hellman Ave Box 44
+1495 E Ninth St
+159 St
+16 Argus St
+1647 N Euclid Ave
+1737 Fairfax Dr
+1802 N Mountain Ave
+1803 E 5th St
+1825 E Holt Ave
+1945 Mallory St
+19th St Box 104
+2 San Bernard
+202 Walnut St
+2030 South Palmetto Ave
+20th St
+21 St
+211 H St
+2127 Mallory St
+214 G St
+2151 Darby St
+223 H St
+2234 Foothill Blvd
+2280 Ogden St
+2364 Kern Ave
+28 Nona St
+2836 Arrowhead Ave
+2920 June St
+312 D St
+315 F St
+322 E St
+366 E 4th St
+3946 Mt View Ave
+415 A St
+415 Acoma St
+419 D St
+420 A St
+420 Oak Glen Ave
+601 Colton Ave
+7 Andr
+733 E Base Line
+780 W 18th St
+807 Downey Ave
+872 S Cedar Ave
+917 Front St
+Adams Ave
+air pilot
+Ananas St
+and Camp
+Apt 4 housewife
+Arizona St
+art work
+bell housewife
+belt maker
+Benton St
+Bloomington Rd
+brakeman S P Co
+buffet owner
+burner leaderman
+butter maker
+Cadena Ave
+Cadena Drive
+cannery superintendent
+Carob St
+Carpenter Highway
+Centerville retired
+chandelier maker
+Chino St
+choc dipper
+cigar salesman
+claim clerk
+claims manager
+clcrk
+coffee merchant
+Colton Ave Rt 2 Box 245
+concessionaire
+crane engineer
+dairy worker
+Decoto retired
+ecretary
+er male clerk
+er male salesman
+eve housewife
+Farmer Ave
+fe n housewife
+fem cashier
+fem musician
+fem school teacher
+field clerk
+field manager
+foreman S P
+fountain work
+furniture merchant
+Golden St
+Government clerk
+Grand Terrace
+Grande St
+Grevillea St
+Highland Rd Box 525
+ho usewife
+household
+Hywd bkkpr
+ihousewife
+kitchen man
+ling man
+Livermore teacher
+lswf
+Lugonia Ave Rt 1 Box 62
+male buyer
+male seaman
+male shoemaker
+Marcus Ave
+McCarty Ave
+news reporter
+Niles nurseryman
+nut t housewife
+o painter
+oil refining
+Olivine Ave
+ore keeper
+P B X opr
+Park St
+Pasadena Camp
+Phillips Blvd
+pipe helper
+plant foreman
+Pleasanton rancher
+PO clerk
+Prado Rd
+preacher
+principal school
+producer
+prof ball player
+pub accountant
+publicity man
+R N
+radio repairman
+ranch hand
+Redlands St
+reet housekeeper
+retired rancher
+rical
+S P
+S P flagman
+sack sewer
+sale man
+sales department
+sales lady
+Salesman St
+San Lean painter
+sander
+sawfiler
+school prin
+ship calker
+shipping foreman
+shoe shiner
+shopkeeper
+sports writer
+sprinkler fitter
+supervisor Tel Co
+supplyman
+switch tender
+ternmaker
+terra cotta worker
+tinter
+tire worker
+tool keeper
+trader
+transcriber
+tree trimmer
+truck helper
+trunk maker
+Turner Ave Box 4
+typesetter
+U S Army retired
+veterinary surgeon
+Vivienda Ave
+W P A worker
+Washington Ave
+welder foreman
+wholesale grocery
+whseman
+Williams St
+Wood Camp
+wood caulker
+adv
+agent S P
+American Can Co
+anton
+assembly
+auto parts clerk
+av
+av teacher
+bar tender
+bellman
+caddy
+captain of police
+car carpenter
+car dealer
+chipper caulker
+clrk
+commercial rep
+cosmetics
+Deputy Co Assessor
+deputy county assessor
+engraving
+ens retired
+er laborer
+er merchant
+farmer Livermore
+farmerette
+folder
+fruit canner
+government emp
+govt clerk
+grocery salesman
+Haywd carpenter
+health nurse
+home manager
+homewife
+housewife J
+husewife
+ice puller
+import and export
+Irvington carpenter
+jobbing
+laborer R
+loans
+maintenance mechanic
+male auditor
+male mariner
+male photographer
+male rancher
+marine supt
+Mark saleslady
+metal smith
+metal spinner
+mngr
+music dealer
+Newark housekeeper
+newspaper woman
+Niles engineer
+nue bookkeeper
+o fem housewife
+on
+outdoor advertising
+p o clerk
+paper merchant
+piano polisher
+police department
+powder worker
+printe r
+r r clerk
+R R trainman
+radio worker
+reet teacher
+researcher
+RFD 3 housewife
+RFD No 2 farmer
+rooming house keeper
+S Lor hswf
+S P laborer
+sales promotion
+security salesman
+sewer
+ship fitter's helper
+shipjoiner
+signpainter
+slsldy
+social work
+t merchant
+tax accountant
+telephone engr
+telephone op
+train service
+transformer winder
+U C teacher
+US Navy
+veterinary
+war worker
+warehouse business
+wholesale
+wholesale lumber
+10 California St
+1002 Ramona Ave
+1011 Front St
+102 Cibola St
+1033 Crafton Ave
+1045 Chico Ave
+1060 W Foothill Blvd
+1063 Chico Ave
+1079 E Base Line
+1110 Kadota St
+1115 Kadota St
+115 Walnut St
+1157 Belvan Ave
+116 Harvard
+118 K St
+1215 Perris Hill Rd
+122 Walnut St
+1221 Front St
+1225 W Crescent Ave
+1308 Hellman Ave Box 110
+1355 N Mountain Ave
+1370 D St
+1371 Cedar St
+1389 Barton St
+1390 Jasper Ave
+1445 E Ninth St
+1450 Perris Hill Rd
+1521 Elmwood Rd
+1549 N Euclid Ave
+155 St
+1574 Tippecanoe St
+1610 South Magnolia Ave
+162 St
+1659 W Colton Ave
+1660 E St
+169 Orange Ave
+1748 Sparks St
+1793 N Euclid Ave
+185 N Palm Ave
+1885 E 5th St
+190 W Foothill Blvd
+1913 Darby St
+195 St
+1969 Mesa St
+1976 Adams St
+201 Cibola St
+203 Walnut St
+205 North K St
+211 J St
+2130 Nice St
+214 Spruce St
+217 C St
+218 G St
+219 Desnok St
+22 St
+2235 Kern St
+2281 Kern St
+2320 So Euclid Ave
+2360 Ogden St
+2377 W A St
+2400 E Grand Ave
+241 Levine St Box 37
+2444 S Euclid Ave
+26th St
+2840 June St
+301 Bazoobuth St
+307 E 4th St
+307 Vict
+310 D St
+311 F St
+312 Elm Circle
+317 Cibola St
+357 40th St
+408 C St
+409 Front St
+411 Acoma St
+411 D St
+414 North Palm Ave
+422 B St
+450 Oak Glen Ave
+457 Tamarind Ave
+488 17th St
+4th and B St
+517 Acoma St
+518 A St
+540 19th St
+576 Sycamore Circle
+6 St
+627 Cibola St
+632 19th St
+655 Acoma St
+657 Kadota Ave
+660 Roswell Ave
+7 At
+790 Roswell Ave
+795 E Base Line
+7th Benson Ave
+8th Archibald Ave
+956 Mayfield Ave
+Acre Lane
+adv salesman
+alnut Ave
+Alvarado butcher
+Anderson Lane
+annage av hswf
+arc welder
+auto body worker
+automobile salesman
+Barton Rd Box 3
+Bay Camp
+Bdno Ave Rt 1 Box 235
+Beech Ave
+bindery girl
+boiler cleaner
+bread salesman
+bridge foreman
+broker's clerk
+brushmaker
+Buckeye St
+buffer
+Builder Camp
+building foreman
+Calabash St
+Canal St
+candy business
+Carol St
+Carpenter At
+certified public accountant
+chicken business
+chicken rancher
+Chico St
+city manager
+civ eng
+Clerk
+clothing cutter
+coal man
+com merchant
+commercial photographer
+comptometer oper
+concrete man
+counter man
+County Line
+creamery employee
+Crippen St
+dental ass't
+dep co assessor
+deputy treasurer
+diver
+dock superintendent
+dockman
+Echo Dr
+employment manager
+Engineer
+engineer S P
+Ennis St Rt 2 Box 688
+express business
+Female Dr
+fence builder
+finance business
+financier
+Foothill Drive
+Foreman St
+Freemont St
+fruit broker
+fruit man
+Fruitvale
+garage work
+Garnet St
+gas meter man
+general mechanic
+Glasgow Ave
+glass beveler
+government
+Haywd housewife
+Hermosa St
+Hill Rd
+Hill Road
+ho sewife
+honemaker
+Hospital At
+housewfie
+houwife
+hswf R
+Hywd hskpr
+Hywd unemployed
+ice delivery
+ing
+ins agt
+janitoress
+Jasper St
+judge
+Junta St
+Kadota St
+Kansas St
+Laborer At
+Laborer St
+lapidary
+Lemon Ave
+Livermore salesman
+logger
+Lowes Rd
+lumber tallyman
+machinis t
+mail service
+male bricklayer
+male civil eng
+male cooper
+male R R man
+male surveyor
+male switchman
+manager apartment
+Mansa Road
+Marie St
+marine oiler
+McCarty St
+mdse broker
+metal wkr
+mfgrs agent
+Michigan Ave
+millwork
+mnfr
+Moon Camp
+Mt Ave
+Nevada St Rt 1 Box 54
+Niles salesman
+o porter
+Oakland housewife
+Opal St
+paint business
+pantry man
+paper salesman
+PBX
+peace officer
+Pines Camp
+punch press opr
+R R engineer
+r r man
+Rancher Highway
+Rancher St
+reet painter
+ret
+retired missionary
+RFD 1 farmer
+RFD Place
+rical worker
+Rose St
+RR mail clerk
+S P emp
+safe expert
+sales rep
+salesma
+salesmana
+salesnan
+San Lean housewife
+San Lean salesman
+San Lorenzo salesman
+sandwich shop
+scavanger
+school dept
+school supervisor
+second cook
+sheet met wkr
+shoe dealer
+Sixth Ave
+smelter
+soapmaker
+South housewife
+SP employee
+spooler
+spot welder
+sprayman
+spring fitter
+Spruce Ave
+Summit St
+Sunol retired
+teacher music
+tel man
+telephone Co
+telephone foreman
+telephone repair man
+Timoteo Road
+truck foreman
+typewriter business
+uff av hswf
+vegetable man
+View Ave Rt 2 Box 276
+voice teacher
+Wabash St
+warehouse superintendent
+Whittram St
+wiper
+A housewife
+accnt
+acet
+acountant
+aeronautics
+ant manager
+art shop
+bakery work
+beauty parlor opr
+bell boy
+bell t housewife
+bldg manager
+boilermkr
+bond clerk
+bookseller
+bty opr
+carpenter D
+cheese maker
+chief
+child nurse
+city freight agent
+claim examiner
+cler
+clerk Tel Co
+clothier
+clothing salesman
+commercial art
+commission
+concrete finisher
+concrete foreman
+cook and waiter
+crane opr
+credit dept
+creditman
+culinary work
+dairy business
+Decoto carpenter
+delivery service
+Diesel engineer
+edgerman
+ens physician
+er male merchant
+essmaking
+fanger
+fern retired
+fireman O F D
+fish merchant
+Fisher Body Co
+frame bender
+furniture mfg
+garage helper
+ground man
+herton housewife
+high school principal
+hoseman
+hosiery mender
+houscwifc
+houseife
+housew fe
+housewifet
+Hwd hswf
+ice business
+ice cream worker
+ink mixer
+insp
+interne
+iron works
+Irvington rancher
+Joseph's Pres Convent teacher
+junior engineer
+keeper
+l
+laborcr
+leisure
+lens grinder
+library
+library worker
+life ins salesman
+linoleum maker
+Livermore dairyman
+machine designer
+machine shop
+machine worker
+machinery salesman
+male dairyman
+male housewife
+Marine Corps
+Mark Hotel housewife
+Mark's Hotel
+Mary's College teacher
+mercantile
+Merchant
+merchant plumber
+mgr apt
+milker
+mu teacher
+news writer
+not working
+office supervisor
+office wk
+olerk
+organ builder
+parcel delivery
+park foreman
+passenger agt
+performer
+personnel officer
+pin setter
+Pleasanton carpenter
+Police Officer
+pressing
+pricer
+public utility
+purchasing clerk
+quarterman
+R E broker
+R E salesman
+R R signalman
+refrig engineer
+retired housewife
+route foreman
+S P porter
+S P towerman
+San Lean laborer
+San Lean nurse
+San Lorenzo foreman
+San Lorenzo teacher
+sec treas
+sec'y
+selling
+service
+service repr
+sheet metal helper
+sheetmetal wkr
+shipfittcr
+shipping clk
+shoe cutter
+signal maintainer
+Southern Pacific Co
+supt P G E
+tank builder
+taxi business
+tdt
+teaming
+telephone business
+telephone emp
+telephone manager
+tile layer
+timechecker
+tire repairman
+trucking business
+tuck av teacher
+tuck fern housewife
+tutor
+typing
+USNR
+violin teacher
+waiter S P
+ware
+wheelwright
+wholesale merchant
+window shade maker
+woodcarver
+woodsman
+Y M C A
+y owner
+1 Box 176 G Place
+10 At
+1015 E Highland Ave
+1050 Chico Ave
+1050 Roswell Ave
+1051 Pumalo St
+107 West
+11 At
+11 St
+110 Spruce St
+1106 E A St
+1115 Front St
+1130 E A St
+115 Spruce St
+116 J St
+1217 E Base Line
+122 Spruce St
+1224 Magnolia Ave
+123 Spruce St
+125 Ada Ave
+1258 E California Blvd
+1267 Tippecanoe St
+1315 Cedar St
+1317 Front St
+1320 N Euclid Ave
+1325 N Crafton Ave
+1333 Barst
+1338 Perris Hill Rd
+1341 Chrysolite Ave
+1345 Tippecanoe St
+1346 Beryl Ave
+1351 E Ninth St
+1359 Turquoise Ave
+1373 Barton St
+1373 Perris Hill Rd
+1407 Perris Hill Rd
+1465 Euclid Ave
+1465 Glasgow Ave
+1478 Barton St
+1515 Arrowhead Ave
+1571 Hellman Ave
+1607 S Cucamonga Ave
+1611 Front St
+1630 N Euclid Ave
+1644 N Euclid Ave
+169 Fifth St
+170 C St
+1717 Collins St
+178 St
+17th t housewife
+1830 W 9th St
+185 N Palm St
+186 St
+190 St
+1904 Second Ave
+1920 Porter St
+1921 5th St
+1954 Adams St
+1955 Adams St
+1978 Mallory St
+1997 N Euclid Ave
+19th St Box 76
+2002 W Highland Ave
+202 Vict
+2023 W 9th St
+2053 Mountain Ave
+2055 Porter St
+208 Cibola St
+2085 Porter St
+209 Bazoobuth St
+21 Palm St
+2122 Blake St
+2130 Mallory St
+2140 Darby St
+217 Crooks Ave
+2175 Ogden St
+218 C St
+2190 E Grand Ave
+221 East
+222 La Praix St
+2260 Ogden St
+2270 Blake St
+228 Palm Ave
+2283 W A St
+2288 S Benson Ave
+231 Lomita Dr P O Box 192
+2495 Kern St
+2530 Ogden St
+254 St
+256 St
+26 Terracina Blvd
+2644 Harrison St
+270 Tennessee St Rt 2 Box 3
+2770 Duffy St
+279 N Second Ave
+282 S Pepper Ave Rt 1 Box 355
+2868 Kingsley Ave
+287 Palm Ave
+29 Palms P O 29 Palms via Whitewat
+2998 June St
+30 Terracina Blvd
+300 Arch St
+304 Elm Circle
+309 E 5th St
+310 Red Hill Dr P O Box 24
+311 Sunnyside Ave
+315 Bazoobuth St
+315 Pedley St
+316 Cibola St
+318 D St
+321 F St
+322 N 2nd Ave
+3335 Duffy St
+37 Mona St Box 92
+395 39th St
+4045 Newmark St
+405 Front St
+4070 E St
+40th St
+4180 E St
+423 B St
+424 Central Ave Rt 2 Box 720
+444 S Central Ave
+5 Mi S E of Vict
+501 Bazoobuth St
+506 Acoma St
+515 E Orange St
+516 A St
+530 S Benson Ave
+531 Sycamore Circle
+563 Sycamore Circle
+571 Sycamore Circle
+594 Sycamore Circle
+597 Kadota Ave
+602 North K St
+607 Acoma St
+687 Elm St
+6th and D St
+6th D St
+716 S Juniper Ave Rt 3 Box 914
+721 Downey Ave
+75 Juanita St
+75 W Pacific St
+757 E Base Line
+780 W Eighth St
+785 Roswell Ave
+785 Turner Ave
+79 W Pacific St
+806 Ramona Ave
+807 4th St
+815 W 17th St
+822 D St
+864 Arrowhead Ave
+885 Arrowhead Ave
+8th st
+904 South Oaks Ave
+910 W 11th St
+945 14th St
+951 Chico St
+998 Hermosa St Box 52
+a a e housewife
+a clerk
+a eve housewife
+accoutntant
+Adelanto Rd
+Adelanto St
+All St
+anton housewife
+Antonio Place
+apartments
+Apt 6 housewife
+apt house keeper
+apt house mngr
+art
+assembly worker
+assessor
+auto manager
+auto shop
+bakery saleslady
+Bank of America
+Base Line Rt 1 Box 18
+Beaumont Ave Rt 2 Box 71
+Belmont St
+Bermudez St
+Betty St
+bindery work
+Bloomington Road
+blueprinter
+boilerman
+bookmender
+box worker
+brass molder
+Browning St
+Bryant St
+Buren St
+cafe man
+candy jobber
+cannery wkr
+car trimmer
+carman S P
+Carnelian Ave
+Carpenter Camp
+carpet cleaning
+Carter St
+Cedar Court
+Center Drive
+chemical eng
+chief opr Tel Co
+city engineer
+city laborer
+city official
+Civil Service
+cleaning and dying
+clerk l
+cloth cutter
+Collins St
+Colton ave
+Colton Ave Rt 2 Box 250
+Comet Ave
+comptom opr
+comptometer op
+councilman
+credit reporter
+Creek Rd Rt 2 Box 252
+Cypress Drive
+dairy man
+Daley Rd
+deck hand S P
+delivery salesman
+Denman Ave
+dental
+Dep Co Assessor
+dept head
+Devore Star Rt Box 3
+dining car cook
+dipper
+dno St
+egg dealer
+eman housewife
+en av Hywd hswf
+Ennis St
+er t teacher
+exec secretary
+Fe Ave
+Fe St
+Fed Land Bank
+Female St
+fern widow
+field secretary
+fieldman
+Fifth st
+Fire Department
+fireman city
+fountain man
+freight car builder
+fur cutter
+fur worker
+general labor
+General Motors
+Glasgow St
+grainer
+h salesman
+h usewife
+hakpr
+Highland Ave Rt 1 Box 113
+Hill Dr
+hlswf
+homnemaker
+Homosassas St
+housewife K
+hw
+Hywd hsf
+Hywd painter
+i
+ick Ter housewife
+imerchant
+Infantry
+ink worker
+insurance special agent
+insurance writer
+Jefferson St
+John St
+jr clerk
+kindergarten teacher
+laborer e
+Linda St
+loc engineer
+Lugonia Ave Rt 1 Box 83
+Lugonia St
+mach hlpr
+machine shop supt
+male flagman
+male ironworker
+male packer
+male undertaker
+Manager Camp
+manager hotel
+Marcus Dr
+Margarita St
+marine pilot
+Mawr Rd
+mdse manager
+Meadow Rd
+mech helper
+mechanio
+metal work
+metalworker
+meter repair man
+mfgr agent
+milk wagon
+Mill St Rt 2 Box 647
+millmnan
+mimeographer
+Mission San Jose laborer
+mold polisher
+mover
+music business
+Nevada St Rt 1 Box 23
+Nevada St Rt 2 Box 296
+Newmark Ave
+nger
+Norman Rd Rt 2 Box 710
+nr E 14th Fitchburg
+nue manager
+nure
+O F D
+o mechanic
+o salesman
+Oaks St
+ockraiser
+office clk
+oil compounder
+on Crescent housewife
+Ontario Rd
+orekpr
+ory
+P T T Co employee
+paint sprayer
+parish visitor
+Philips St
+phys and surgeon
+pile butt
+pipe fitter helper
+pipe maker
+Poplar Ave
+Poplar St Rt 2 Box 247
+Porter St
+Prado Rd Rt 2 Box 137
+prod manager
+property mgr
+public official
+R R
+R R mail service
+rabbi
+radio entertainer
+radio opr
+Red Cross
+Redlands Blvd
+Remington Ave
+retail grocer
+Retired Ave
+retired clerk
+retired officer
+ro fern housewife
+Robles Rd
+route manager
+s carpenter
+s Decoto laborer
+S P deckhand
+S P pensioner
+S P shops
+saleeman
+salelady
+sales auditor
+salesmani
+salesmanl
+salesmann
+salesperson
+San Lean carpenter
+San Lorenzo painter
+school employee
+Scotland St
+secretary manager
+seedsman
+Shafer St
+ship wkr
+ship wright
+shipbuilding
+shoe repairman
+son Ave
+Springs St
+Sunol laborer
+super cargo
+supervising foreman
+supt of schools
+surgical fitter
+tailores
+teacher D
+telephone technician
+telephoneman
+ter
+Terracina Blvd
+timberman
+Timoteo St
+tleman
+toy maker
+traffic engineer
+train baggageman
+transfer clerk
+tree surgery
+U S Dept Agriculture
+U S marine
+U S N retired
+Valley Blvd Rt 1 Box 481
+View Ave Rt 2 Box 266
+View Dr
+W P A employee
+Wabash Ave Rt 1 Box 283
+Walnut Road
+waxer
+wicker worker
+window shades
+wine merchant
+winery worker
+workman
+X ray
+Yucaipa Ave
+account
+adv man
+aircraft mech
+anglesmith
+Apts salesman
+aurant owner
+av fireman
+bank bookkeeper
+bank mgr
+barher
+basket making
+body worker
+bookkeeper cashier
+building laborer
+bus manager
+busboy
+businesswoman
+butcherette
+captain fire department
+captain fire dept
+carman's helper
+carpenter and builder
+china painter
+civil service employee
+clk
+clock maker
+coach
+college professor
+common laborer
+composer
+compressor opr
+compt
+credit
+credit work
+diet kitchen
+e t housewife
+Elliott Fisher opr
+ens clerk
+explosives
+fem music teacher
+fern saleslady
+fire captain
+floor walker
+furnaceman
+furniture maker
+gas meter repairer
+glass jobber
+glass merchant
+gov't clerk
+government work
+grocery owner
+grower
+h ousewife
+Hayd retired
+hmkr
+hoilermaker
+homekpr
+hospital work
+hou ewif
+houewif
+houmewife
+hous wife
+house ife
+house man
+housewi
+housewi'fe
+housewifce
+housewife Re
+Hywd homemkr
+Hywd housekpr
+Hywd poultry
+Hywd secretary
+ianitor
+ice cream mkr
+ice worker
+ins manager
+insur underwriter
+insurance executive
+ironmolder
+junk man
+kiln burner
+kitchen worker
+Laborer
+laborer I
+laborer P G E
+laorer
+legal clerk
+life ins underwriter
+liquor merchant
+lunch counter
+machine man
+machinery business
+maintenance engineer
+male engr
+male lumber clerk
+male messenger
+male millwright
+male publisher
+male reporter
+market business
+Marks housewife
+mechanics helper
+medical secretary
+metal cleaner
+n
+newspaper business
+Niles mechanic
+nue engineer
+nue motorman
+nut male clerk
+o cook
+o male farmer
+o waiter
+on fem housewife
+P B X
+P T T Co empl
+P T T employee
+paint foreman
+painting contr
+panner
+photog
+piano business
+piano dealer
+piano technician
+pileman
+pipe layer
+planner
+Pleasanton housekeeper
+plumbing supplies
+Porter
+press tender
+PWA
+radio repair
+ranch owner
+reed worker
+refiner
+repacker
+resident manager
+retired school teacher
+revenue agent
+rigger leaderman
+rigger's helper
+roller man
+rug merchant
+S P man
+S P switchman
+S S agent
+saleelady
+sampler
+San Lor rancher
+sergeant police
+service clerk
+sheet iron worker
+ship chandler
+ships clerk
+shirt cutter
+shop
+shop supt
+shopman
+show business
+sign business
+singing teacher
+skilled labor
+soda fountain clerk
+spring worker
+surety bonds
+t laborer
+tax agent
+teacher R
+tel oper
+Telephone Co employee
+telephone employe
+track walker
+tuck av retired
+tuck av salesman
+tuck male merchant
+typewriter service
+U C faculty
+varnisher
+wkr
+WPA work
+Y M C A secy
+y wkr
