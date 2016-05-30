@@ -1,0 +1,36 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import tensorflow as tf
+import numpy as np
+from tensorflow.python.platform import gfile
+from rnn_enhancement import decoding_enhanced
+
+from tf_seq2seq_chatbot.configs.config import FLAGS, BUCKETS
+from tf_seq2seq_chatbot.lib import data_utils
+from tf_seq2seq_chatbot.lib import seq2seq_model
+
+
+def create_model(session, forward_only):
+  """Create translation model and initialize or load parameters in session."""
+
+  #hidden_size, max_gradient_norm, vocab_size,label_size,batch_size, num_steps,learning_rate,learning_rate_decay_factor,forward_only=False):
+  model = seq2seq_model.Seq2SeqModel(
+      hidden_size=FLAGS.size,
+      max_gradient_norm=FLAGS.max_gradient_norm,
+      vocab_size=FLAGS.vocab_size,
+      label_size=output_size,
+      batch_size=FLAGS.batch_size,
+      num_steps=FLAGS.num_steps,
+      learning_rate=FLAGS.learning_rate,
+      learning_rate_decay_factor=FLAGS.learning_rate_decay_factor,
+      forward_only=forward_only)
+  ckpt = tf.train.get_checkpoint_state(FLAGS.model_dir)
+  if ckpt and gfile.Exists(ckpt.model_checkpoint_path):
+    print("Reading model parameters from %s" % ckpt.model_checkpoint_path)
+    model.saver.restore(session, ckpt.model_checkpoint_path)
+  else:
+    print("Created model with fresh parameters.")
+    session.run(tf.initialize_all_variables())
+  return model
