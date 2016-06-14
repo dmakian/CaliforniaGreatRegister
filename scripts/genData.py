@@ -19,6 +19,7 @@ def genData():
     outData = open("rawGen.txt","w")
     labelsOut = open("labelsGen.txt","w")
     for i in range(10):
+        print i
         middle = copy.deepcopy(vary)
         random.shuffle(middle) #shuffle the elements of each string for the current page
         if random.random() < .99: ## ESTIMATE: gender in 1% of data
@@ -75,9 +76,12 @@ def genData():
             out =  corrupt(out)
             labels.extend(new_labels)
             page+=out
-        page+='\n'
         labelstr = ' '.join([str(i) for i in labels])+"\n"
-        outData.write(page)
+        for c in page:
+            outData.write("{}".format(ord(c))+" ")
+        outData.write("\n")
+        # pasgestr = ' '.join(list(page))+"\n"
+        # outData.write(page)
         labelsOut.write(labelstr)
         # print page
         # print len(list(page)),len(labels)

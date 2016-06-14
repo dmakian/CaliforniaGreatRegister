@@ -5,7 +5,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import tensorflow as tf
 
-from tf_seq2seq_chatbot.lib.train import train
+from tf_bidirectional_charnn.lib.train import train
 
 
 def main(_):

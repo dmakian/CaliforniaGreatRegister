@@ -8,6 +8,7 @@ contact: josh.grigonis@gmail.com
 import os
 import random
 import string
+import numpy as np
 
 class SimpleNameGenerator(object):
     """A class for generating first and last names
@@ -92,24 +93,30 @@ class NameGenerator(SimpleNameGenerator):
     def make_name_lists(self):
         """Create a NameAndFrequency object for each name in each list."""
         self.male_names = []
+        self.male_freqs = []
         self.female_names = []
+        self.female_freqs = []
         self.last_names = []
-        self.make_names(self.male_name_data, self.male_names)
-        self.make_names(self.female_name_data, self.female_names)
-        self.make_names(self.last_name_data, self.last_names)
-    def make_names(self, datalist, namelist):
+        self.last_freqs = []
+        self.make_names(self.male_name_data, self.male_names,self.male_freqs)
+        self.make_names(self.female_name_data, self.female_names,self.female_freqs)
+        self.make_names(self.last_name_data, self.last_names,self.last_freqs)
+    def make_names(self, datalist, namelist,freqs):
         """Actually create the NameAndFrequency objects here.
 
         The name needs to be in the first column, and the cumulative
         frequency value needs to be in the third.
 
         """
-        start_range = 0.0
         for line in datalist:
-            end_range = float(string.split(line)[2])
-            namelist.append(NameAndFrequency(string.split(line)[0], \
-                            start_range, end_range))
-            start_range = end_range
+            namelist.append(string.split(line)[0])
+            newf = float(string.split(line)[1])
+            if newf == 0:
+                newf = .0001
+            freqs.append(newf)
+        s = sum(freqs)
+        for i in range(len(freqs)):
+            freqs[i] = freqs[i]/s
     def generate_name(self, sex):
         """Generate a random name, based on frequency.
 
@@ -125,20 +132,9 @@ class NameGenerator(SimpleNameGenerator):
         pick a random choice from that list.
 
         """
-        matching_last_names = []
-        matching_names = []
-        rlast = random.uniform(0.0, 90.483)
-        for name in self.last_names:
-            if name.start <= rlast and name.end >= rlast - 0.001:
-                matching_last_names.append(name)
+        lastname = np.random.choice(self.last_names,1,p=self.last_freqs)[0]
         if sex in ["m", "male"]:
-            rfirst = random.uniform(0.0, 90.040)
-            for name in self.male_names:
-                if name.start <= rfirst and name.end >= rfirst - 0.001:
-                    matching_names.append(name)
+            firstname = np.random.choice(self.male_names,1,p=self.male_freqs)[0]
         else:
-            rfirst = random.uniform(0.0, 90.024)
-            for name in self.female_names:
-                if name.start <= rfirst and name.end >= rfirst - 0.001:
-                    matching_names.append(name)
-        return random.choice(matching_names).name, random.choice(matching_last_names).name
+            firstname = np.random.choice(self.female_names,1,p=self.female_freqs)[0]
+        return firstname, lastname

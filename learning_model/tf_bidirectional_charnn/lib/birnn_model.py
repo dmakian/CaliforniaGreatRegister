@@ -13,7 +13,7 @@ import tensorflow as tf
 # from tensorflow.models.rnn import seq2seq
 
 
-from tf_seq2seq_chatbot.lib import data_utils
+from tf_bidirectional_charnn.lib import data_utils
 
 
 class BiRNNClassificationModel(object):
@@ -47,12 +47,13 @@ class BiRNNClassificationModel(object):
         self.learning_rate * learning_rate_decay_factor)
     self.global_step = tf.Variable(0, trainable=False)
     self.num_steps = num_steps
+    self.embed_size = 32
     # logdir='logs/train/'
     self.trainwriter = tf.train.SummaryWriter('logs/train/')
     self.devwriter = tf.train.SummaryWriter('logs/dev/')
 
 
-    # Create the internal multi-layer cell for our RNN.
+    # Create the internal  cell for our RNN.
     forward_cell = tf.nn.rnn_cell.LSTMCell(hidden_size)
     back_cell = tf.nn.rnn_cell.LSTMCell(hidden_size)
 
@@ -60,32 +61,46 @@ class BiRNNClassificationModel(object):
     self.labels_placeholder= tf.placeholder(tf.int32,  shape=(self.batch_size,self.num_steps))
 
     self.istate_fw = tf.placeholder("float", [None, 2*hidden_size])
-    self.istate_fw = tf.placeholder("float", [None, 2*hidden_size])
+    # self.istate_bw = tf.placeholder("float", [None, 2*hidden_size])
+    self.istate_bw = tf.get_variable("istate_bw",(self.batch_size, 2*hidden_size))
 
+    self.embeddings = tf.get_variable("embeddings",(vocab_size, self.embed_size))
+    L = tf.nn.embedding_lookup(self.embeddings,self.input_placeholder)
+    # print L
+    ls = tf.split(1,self.num_steps,L)
+    inputs = []
+    for l in ls:
+        inputs.append(tf.reshape(l,(1,self.embed_size)))
 
     # Feeds for inputs.
-    self.inputs = [tf.unpack(self.input_placeholder,1)]
-    self.labels = [tf.unpack(self.labels_placeholder,1)]
+    # self.inputs = tf.split(1,self.num_steps,self.input_placeholder)
+    lab = tf.split(1,self.num_steps,self.labels_placeholder)
+    self.labels = []
+    for l in lab:
+        self.labels.append(tf.reshape(l,(1,)))
+    # print(inputs)
 
-    rnn_outputs,forward_out,_ = rnn.bidirectional_rnn(forward_cell, back_cell, input_placeholder,
-                                            initial_state_fw=istate_fw,
-                                            initial_state_bw=istate_bw)
+    rnn_outputs,self.forward_out,_ = tf.nn.bidirectional_rnn(forward_cell, back_cell, inputs,
+                                            initial_state_fw=self.istate_fw,
+                                            initial_state_bw=self.istate_bw)
 
-    def output_projection(rnn_out):
-        with tf.variable_scope("projection") as scope:
-            U = tf.get_variable("U",(2*self.hidden_size,self.label_size),tf.float32)
-            b = tf.get_variable("b",(self.label_size),tf.float32,tf.zeros)
-            return tf.matmul(rnn_out,U)+b
+    def output_projection(rnn_out,U,b):
+        return tf.matmul(rnn_out,U)+b
 
     self.projections = []
+    U = tf.get_variable("U",(2*hidden_size,label_size),tf.float32)
+    b = tf.get_variable("b",(label_size),tf.float32,tf.zeros)
     for rnn_out in rnn_outputs:
-        self.projections.append(output_projection(rnn_out))
+        self.projections.append(output_projection(rnn_out,U,b))
 
     losses = []
-    for i in range(len(projections)):
-        losses.append(tf.nn.sparse_softmax_cross_entropy_with_logits(projections[i], self.labels[i])
+    for i in range(len(self.projections)):
+        # print(self.projections[i])
+        # print(self.labels[i])
+        losses.append(tf.nn.sparse_softmax_cross_entropy_with_logits(self.projections[i], self.labels[i]))
 
-    self.loss = tf.add_n(losses)
+    self.loss = tf.squeeze(tf.add_n(losses))
+    print(self.loss)
     # Training outputs and losses.
     self.loss_summary = tf.scalar_summary("loss", self.loss)
       # If we use output projection, we need to project outputs for decoding.
@@ -104,8 +119,7 @@ class BiRNNClassificationModel(object):
       self.update = opt.apply_gradients(zip(clipped_gradients, params), global_step=self.global_step)
     self.saver = tf.train.Saver(tf.all_variables())
 
-  def step(self, session, encoder_inputs, decoder_inputs, target_weights,
-           bucket_id, forward_only,step=0):
+  def step(self, session, inputs, labels,istate_fw,forward_only,step=0):
     """Run a step of the model feeding the given inputs.
 
     Args:
@@ -130,14 +144,15 @@ class BiRNNClassificationModel(object):
     input_feed = {}
     input_feed[self.input_placeholder] = inputs
     input_feed[self.labels_placeholder] = labels
+    input_feed[self.istate_fw] = istate_fw
 
     # Output feed: depends on whether we do a backward step or not.
     if not forward_only:
       output_feed = [self.loss_summary,self.update,  # Update Op that does SGD.
                      self.gradient_norm,  # Gradient norm.
-                     self.loss]  # Loss for this batch.
+                     self.loss,self.forward_out]  # Loss for this batch.
     else:
-      output_feed = [self.loss_summary,self.loss]  # Loss for this batch.
+      output_feed = [self.loss_summary,self.loss,self.forward_out]  # Loss for this batch.
       for proj in self.projections:
           output_feed.append(proj)
 
@@ -148,6 +163,6 @@ class BiRNNClassificationModel(object):
     else:
         self.devwriter.add_summary(m,step)
     if not forward_only:
-      return outputs[2], outputs[3], None  # Gradient norm, loss, no outputs.
+      return outputs[2], outputs[3], outputs[4]  # Gradient norm, loss, no outputs.
     else:
-      return None, outputs[1], outputs[2:]  # No gradient norm, loss, outputs.
+      return outputs[1], outputs[2], outputs[3:]  # No gradient norm, loss, outputs.
